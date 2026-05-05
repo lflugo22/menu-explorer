@@ -1,0 +1,17 @@
+{
+  "name": "sc-catalog-builder",
+  "version": "1.0.0",
+  "description": "Build pipeline: compiles SC device markdown files into catalog.json for the SPA",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node build.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "marked": "^18.0.3"
+  }
+}

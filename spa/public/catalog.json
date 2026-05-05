@@ -1,0 +1,575 @@
+{
+  "meta": {
+    "built_at": "2026-05-05T05:05:54.961Z",
+    "schema_version": "1"
+  },
+  "controllers": [
+    "sc4500@3.90"
+  ],
+  "device_types": {
+    "sc4500": {
+      "id": "sc4500",
+      "versions": [
+        "sc4500@3.90"
+      ]
+    },
+    "phD-ORP": {
+      "id": "phD-ORP",
+      "versions": [
+        "phD-ORP@3.4"
+      ]
+    }
+  },
+  "versions": {
+    "sc4500@3.90": {
+      "id": "sc4500@3.90",
+      "device_type": "sc4500",
+      "version": "3.90",
+      "label": "SC4500 v3.90",
+      "is_controller": true,
+      "max_devices": 2,
+      "compatible_controllers": [],
+      "source_file": "sc4500-v3.90.md",
+      "root_nodes": [
+        "sc4500@3.90/devices",
+        "sc4500@3.90/notification",
+        "sc4500@3.90/controller"
+      ]
+    },
+    "phD-ORP@3.4": {
+      "id": "phD-ORP@3.4",
+      "device_type": "phD-ORP",
+      "version": "3.4",
+      "label": "phD-ORP v3.4",
+      "is_controller": false,
+      "max_devices": null,
+      "compatible_controllers": [
+        "sc4500"
+      ],
+      "source_file": "phd_orp.md",
+      "root_nodes": [
+        "phD-ORP@3.4/measurement",
+        "phD-ORP@3.4/calibration",
+        "phD-ORP@3.4/diagnostics"
+      ]
+    }
+  },
+  "nodes": {
+    "sc4500@3.90/devices": {
+      "id": "sc4500@3.90/devices",
+      "version_id": "sc4500@3.90",
+      "path": "devices",
+      "key": "devices",
+      "label": "Devices",
+      "description": "Manage and navigate connected device settings.",
+      "type": "branch",
+      "depth": 0,
+      "parent_id": null,
+      "children": [
+        "sc4500@3.90/devices.slot"
+      ],
+      "sort_order": 0,
+      "controller_labels": {}
+    },
+    "sc4500@3.90/devices.slot": {
+      "id": "sc4500@3.90/devices.slot",
+      "version_id": "sc4500@3.90",
+      "path": "devices.slot",
+      "key": "slot",
+      "label": "Device {{slot_index}}",
+      "description": "Navigate to the settings for this connected device.",
+      "type": "slot",
+      "depth": 1,
+      "parent_id": "sc4500@3.90/devices",
+      "children": [],
+      "sort_order": 0,
+      "controller_labels": {}
+    },
+    "sc4500@3.90/notification": {
+      "id": "sc4500@3.90/notification",
+      "version_id": "sc4500@3.90",
+      "path": "notification",
+      "key": "notification",
+      "label": "Notification",
+      "description": "System messages, active alarms, and maintenance reminders.",
+      "type": "branch",
+      "depth": 0,
+      "parent_id": null,
+      "children": [
+        "sc4500@3.90/notification.errors",
+        "sc4500@3.90/notification.warnings",
+        "sc4500@3.90/notification.reminders"
+      ],
+      "sort_order": 1,
+      "controller_labels": {}
+    },
+    "sc4500@3.90/notification.errors": {
+      "id": "sc4500@3.90/notification.errors",
+      "version_id": "sc4500@3.90",
+      "path": "notification.errors",
+      "key": "errors",
+      "label": "Errors",
+      "description": "Active sensor and system errors",
+      "type": "leaf",
+      "depth": 1,
+      "parent_id": "sc4500@3.90/notification",
+      "children": [],
+      "sort_order": 0,
+      "controller_labels": {}
+    },
+    "sc4500@3.90/notification.warnings": {
+      "id": "sc4500@3.90/notification.warnings",
+      "version_id": "sc4500@3.90",
+      "path": "notification.warnings",
+      "key": "warnings",
+      "label": "Warnings",
+      "description": "Calibration due, maintenance alerts",
+      "type": "leaf",
+      "depth": 1,
+      "parent_id": "sc4500@3.90/notification",
+      "children": [],
+      "sort_order": 1,
+      "controller_labels": {}
+    },
+    "sc4500@3.90/notification.reminders": {
+      "id": "sc4500@3.90/notification.reminders",
+      "version_id": "sc4500@3.90",
+      "path": "notification.reminders",
+      "key": "reminders",
+      "label": "Reminders",
+      "description": "Scheduled maintenance tasks",
+      "type": "leaf",
+      "depth": 1,
+      "parent_id": "sc4500@3.90/notification",
+      "children": [],
+      "sort_order": 2,
+      "controller_labels": {}
+    },
+    "sc4500@3.90/controller": {
+      "id": "sc4500@3.90/controller",
+      "version_id": "sc4500@3.90",
+      "path": "controller",
+      "key": "controller",
+      "label": "Controller",
+      "description": "SC4500 system settings — general configuration, connectivity, USB transfer, and service.",
+      "type": "branch",
+      "depth": 0,
+      "parent_id": null,
+      "children": [
+        "sc4500@3.90/controller.general"
+      ],
+      "sort_order": 2,
+      "controller_labels": {}
+    },
+    "sc4500@3.90/controller.general": {
+      "id": "sc4500@3.90/controller.general",
+      "version_id": "sc4500@3.90",
+      "path": "controller.general",
+      "key": "general",
+      "label": "General",
+      "description": "Language, time, display, facility",
+      "type": "branch",
+      "depth": 1,
+      "parent_id": "sc4500@3.90/controller",
+      "children": [
+        "sc4500@3.90/controller.general.language",
+        "sc4500@3.90/controller.general.timezone",
+        "sc4500@3.90/controller.general.timeformat",
+        "sc4500@3.90/controller.general.time",
+        "sc4500@3.90/controller.general.date",
+        "sc4500@3.90/controller.general.facility",
+        "sc4500@3.90/controller.general.location",
+        "sc4500@3.90/controller.general.devicemanu",
+        "sc4500@3.90/controller.general.display"
+      ],
+      "sort_order": 0,
+      "controller_labels": {}
+    },
+    "sc4500@3.90/controller.general.language": {
+      "id": "sc4500@3.90/controller.general.language",
+      "version_id": "sc4500@3.90",
+      "path": "controller.general.language",
+      "key": "language",
+      "label": "Language",
+      "description": null,
+      "type": "leaf",
+      "depth": 2,
+      "parent_id": "sc4500@3.90/controller.general",
+      "children": [],
+      "sort_order": 0,
+      "controller_labels": {}
+    },
+    "sc4500@3.90/controller.general.timezone": {
+      "id": "sc4500@3.90/controller.general.timezone",
+      "version_id": "sc4500@3.90",
+      "path": "controller.general.timezone",
+      "key": "timezone",
+      "label": "Time Zone",
+      "description": null,
+      "type": "leaf",
+      "depth": 2,
+      "parent_id": "sc4500@3.90/controller.general",
+      "children": [],
+      "sort_order": 1,
+      "controller_labels": {}
+    },
+    "sc4500@3.90/controller.general.timeformat": {
+      "id": "sc4500@3.90/controller.general.timeformat",
+      "version_id": "sc4500@3.90",
+      "path": "controller.general.timeformat",
+      "key": "timeformat",
+      "label": "Time Format",
+      "description": null,
+      "type": "leaf",
+      "depth": 2,
+      "parent_id": "sc4500@3.90/controller.general",
+      "children": [],
+      "sort_order": 2,
+      "controller_labels": {}
+    },
+    "sc4500@3.90/controller.general.time": {
+      "id": "sc4500@3.90/controller.general.time",
+      "version_id": "sc4500@3.90",
+      "path": "controller.general.time",
+      "key": "time",
+      "label": "Time",
+      "description": null,
+      "type": "leaf",
+      "depth": 2,
+      "parent_id": "sc4500@3.90/controller.general",
+      "children": [],
+      "sort_order": 3,
+      "controller_labels": {}
+    },
+    "sc4500@3.90/controller.general.date": {
+      "id": "sc4500@3.90/controller.general.date",
+      "version_id": "sc4500@3.90",
+      "path": "controller.general.date",
+      "key": "date",
+      "label": "Date",
+      "description": null,
+      "type": "leaf",
+      "depth": 2,
+      "parent_id": "sc4500@3.90/controller.general",
+      "children": [],
+      "sort_order": 4,
+      "controller_labels": {}
+    },
+    "sc4500@3.90/controller.general.facility": {
+      "id": "sc4500@3.90/controller.general.facility",
+      "version_id": "sc4500@3.90",
+      "path": "controller.general.facility",
+      "key": "facility",
+      "label": "Facility",
+      "description": null,
+      "type": "leaf",
+      "depth": 2,
+      "parent_id": "sc4500@3.90/controller.general",
+      "children": [],
+      "sort_order": 5,
+      "controller_labels": {}
+    },
+    "sc4500@3.90/controller.general.location": {
+      "id": "sc4500@3.90/controller.general.location",
+      "version_id": "sc4500@3.90",
+      "path": "controller.general.location",
+      "key": "location",
+      "label": "Location",
+      "description": null,
+      "type": "leaf",
+      "depth": 2,
+      "parent_id": "sc4500@3.90/controller.general",
+      "children": [],
+      "sort_order": 6,
+      "controller_labels": {}
+    },
+    "sc4500@3.90/controller.general.devicemanu": {
+      "id": "sc4500@3.90/controller.general.devicemanu",
+      "version_id": "sc4500@3.90",
+      "path": "controller.general.devicemanu",
+      "key": "devicemanu",
+      "label": "Device Menu",
+      "description": null,
+      "type": "leaf",
+      "depth": 2,
+      "parent_id": "sc4500@3.90/controller.general",
+      "children": [],
+      "sort_order": 7,
+      "controller_labels": {}
+    },
+    "sc4500@3.90/controller.general.display": {
+      "id": "sc4500@3.90/controller.general.display",
+      "version_id": "sc4500@3.90",
+      "path": "controller.general.display",
+      "key": "display",
+      "label": "Display",
+      "description": null,
+      "type": "leaf",
+      "depth": 2,
+      "parent_id": "sc4500@3.90/controller.general",
+      "children": [],
+      "sort_order": 8,
+      "controller_labels": {}
+    },
+    "phD-ORP@3.4/measurement": {
+      "id": "phD-ORP@3.4/measurement",
+      "version_id": "phD-ORP@3.4",
+      "path": "measurement",
+      "key": "measurement",
+      "label": "Measurement",
+      "description": "Sensor readings and calculated outputs.",
+      "type": "branch",
+      "depth": 0,
+      "parent_id": null,
+      "children": [
+        "phD-ORP@3.4/measurement.ph",
+        "phD-ORP@3.4/measurement.temperature"
+      ],
+      "sort_order": 0,
+      "controller_labels": {}
+    },
+    "phD-ORP@3.4/measurement.ph": {
+      "id": "phD-ORP@3.4/measurement.ph",
+      "version_id": "phD-ORP@3.4",
+      "path": "measurement.ph",
+      "key": "ph",
+      "label": "pH",
+      "description": null,
+      "type": "branch",
+      "depth": 1,
+      "parent_id": "phD-ORP@3.4/measurement",
+      "children": [
+        "phD-ORP@3.4/measurement.ph.slope",
+        "phD-ORP@3.4/measurement.ph.calibration_status"
+      ],
+      "sort_order": 0,
+      "controller_labels": {}
+    },
+    "phD-ORP@3.4/measurement.ph.slope": {
+      "id": "phD-ORP@3.4/measurement.ph.slope",
+      "version_id": "phD-ORP@3.4",
+      "path": "measurement.ph.slope",
+      "key": "slope",
+      "label": "Slope",
+      "description": null,
+      "type": "branch",
+      "depth": 2,
+      "parent_id": "phD-ORP@3.4/measurement.ph",
+      "children": [
+        "phD-ORP@3.4/measurement.ph.slope.slope",
+        "phD-ORP@3.4/measurement.ph.slope.offset"
+      ],
+      "sort_order": 0,
+      "controller_labels": {}
+    },
+    "phD-ORP@3.4/measurement.ph.slope.slope": {
+      "id": "phD-ORP@3.4/measurement.ph.slope.slope",
+      "version_id": "phD-ORP@3.4",
+      "path": "measurement.ph.slope.slope",
+      "key": "slope",
+      "label": "Slope",
+      "description": "Electrode response factor.",
+      "type": "leaf",
+      "depth": 3,
+      "parent_id": "phD-ORP@3.4/measurement.ph.slope",
+      "children": [],
+      "sort_order": 0,
+      "controller_labels": {}
+    },
+    "phD-ORP@3.4/measurement.ph.slope.offset": {
+      "id": "phD-ORP@3.4/measurement.ph.slope.offset",
+      "version_id": "phD-ORP@3.4",
+      "path": "measurement.ph.slope.offset",
+      "key": "offset",
+      "label": "Offset",
+      "description": "Electrode zero point offset.",
+      "type": "leaf",
+      "depth": 3,
+      "parent_id": "phD-ORP@3.4/measurement.ph.slope",
+      "children": [],
+      "sort_order": 1,
+      "controller_labels": {}
+    },
+    "phD-ORP@3.4/measurement.ph.calibration_status": {
+      "id": "phD-ORP@3.4/measurement.ph.calibration_status",
+      "version_id": "phD-ORP@3.4",
+      "path": "measurement.ph.calibration_status",
+      "key": "calibration_status",
+      "label": "Calibration Status",
+      "description": null,
+      "type": "branch",
+      "depth": 2,
+      "parent_id": "phD-ORP@3.4/measurement.ph",
+      "children": [
+        "phD-ORP@3.4/measurement.ph.calibration_status.cal_status"
+      ],
+      "sort_order": 1,
+      "controller_labels": {}
+    },
+    "phD-ORP@3.4/measurement.ph.calibration_status.cal_status": {
+      "id": "phD-ORP@3.4/measurement.ph.calibration_status.cal_status",
+      "version_id": "phD-ORP@3.4",
+      "path": "measurement.ph.calibration_status.cal_status",
+      "key": "cal_status",
+      "label": "Calibration Status",
+      "description": "Last calibration result.",
+      "type": "leaf",
+      "depth": 3,
+      "parent_id": "phD-ORP@3.4/measurement.ph.calibration_status",
+      "children": [],
+      "sort_order": 0,
+      "controller_labels": {}
+    },
+    "phD-ORP@3.4/measurement.temperature": {
+      "id": "phD-ORP@3.4/measurement.temperature",
+      "version_id": "phD-ORP@3.4",
+      "path": "measurement.temperature",
+      "key": "temperature",
+      "label": "Temperature",
+      "description": null,
+      "type": "branch",
+      "depth": 1,
+      "parent_id": "phD-ORP@3.4/measurement",
+      "children": [
+        "phD-ORP@3.4/measurement.temperature.temp"
+      ],
+      "sort_order": 1,
+      "controller_labels": {}
+    },
+    "phD-ORP@3.4/measurement.temperature.temp": {
+      "id": "phD-ORP@3.4/measurement.temperature.temp",
+      "version_id": "phD-ORP@3.4",
+      "path": "measurement.temperature.temp",
+      "key": "temp",
+      "label": "Temperature",
+      "description": "Ambient temperature reading in °C.",
+      "type": "leaf",
+      "depth": 2,
+      "parent_id": "phD-ORP@3.4/measurement.temperature",
+      "children": [],
+      "sort_order": 0,
+      "controller_labels": {}
+    },
+    "phD-ORP@3.4/calibration": {
+      "id": "phD-ORP@3.4/calibration",
+      "version_id": "phD-ORP@3.4",
+      "path": "calibration",
+      "key": "calibration",
+      "label": "Calibration",
+      "description": "Calibration procedures and history.",
+      "type": "branch",
+      "depth": 0,
+      "parent_id": null,
+      "children": [
+        "phD-ORP@3.4/calibration.ph_calibration"
+      ],
+      "sort_order": 1,
+      "controller_labels": {}
+    },
+    "phD-ORP@3.4/calibration.ph_calibration": {
+      "id": "phD-ORP@3.4/calibration.ph_calibration",
+      "version_id": "phD-ORP@3.4",
+      "path": "calibration.ph_calibration",
+      "key": "ph_calibration",
+      "label": "pH Calibration",
+      "description": null,
+      "type": "branch",
+      "depth": 1,
+      "parent_id": "phD-ORP@3.4/calibration",
+      "children": [
+        "phD-ORP@3.4/calibration.ph_calibration.ph_slope",
+        "phD-ORP@3.4/calibration.ph_calibration.ph_offset"
+      ],
+      "sort_order": 0,
+      "controller_labels": {}
+    },
+    "phD-ORP@3.4/calibration.ph_calibration.ph_slope": {
+      "id": "phD-ORP@3.4/calibration.ph_calibration.ph_slope",
+      "version_id": "phD-ORP@3.4",
+      "path": "calibration.ph_calibration.ph_slope",
+      "key": "ph_slope",
+      "label": "Slope Adjustment",
+      "description": "Manual slope correction factor.",
+      "type": "leaf",
+      "depth": 2,
+      "parent_id": "phD-ORP@3.4/calibration.ph_calibration",
+      "children": [],
+      "sort_order": 0,
+      "controller_labels": {}
+    },
+    "phD-ORP@3.4/calibration.ph_calibration.ph_offset": {
+      "id": "phD-ORP@3.4/calibration.ph_calibration.ph_offset",
+      "version_id": "phD-ORP@3.4",
+      "path": "calibration.ph_calibration.ph_offset",
+      "key": "ph_offset",
+      "label": "Offset Adjustment",
+      "description": "Manual offset correction value.",
+      "type": "leaf",
+      "depth": 2,
+      "parent_id": "phD-ORP@3.4/calibration.ph_calibration",
+      "children": [],
+      "sort_order": 1,
+      "controller_labels": {}
+    },
+    "phD-ORP@3.4/diagnostics": {
+      "id": "phD-ORP@3.4/diagnostics",
+      "version_id": "phD-ORP@3.4",
+      "path": "diagnostics",
+      "key": "diagnostics",
+      "label": "Diagnostics",
+      "description": "Sensor health and error reporting.",
+      "type": "branch",
+      "depth": 0,
+      "parent_id": null,
+      "children": [
+        "phD-ORP@3.4/diagnostics.sensor_status",
+        "phD-ORP@3.4/diagnostics.error_log",
+        "phD-ORP@3.4/diagnostics.uptime"
+      ],
+      "sort_order": 2,
+      "controller_labels": {}
+    },
+    "phD-ORP@3.4/diagnostics.sensor_status": {
+      "id": "phD-ORP@3.4/diagnostics.sensor_status",
+      "version_id": "phD-ORP@3.4",
+      "path": "diagnostics.sensor_status",
+      "key": "sensor_status",
+      "label": "Sensor Status",
+      "description": "Current operational status of the sensor.",
+      "type": "leaf",
+      "depth": 1,
+      "parent_id": "phD-ORP@3.4/diagnostics",
+      "children": [],
+      "sort_order": 0,
+      "controller_labels": {}
+    },
+    "phD-ORP@3.4/diagnostics.error_log": {
+      "id": "phD-ORP@3.4/diagnostics.error_log",
+      "version_id": "phD-ORP@3.4",
+      "path": "diagnostics.error_log",
+      "key": "error_log",
+      "label": "Error Log",
+      "description": "Recent error and warning history.",
+      "type": "leaf",
+      "depth": 1,
+      "parent_id": "phD-ORP@3.4/diagnostics",
+      "children": [],
+      "sort_order": 1,
+      "controller_labels": {}
+    },
+    "phD-ORP@3.4/diagnostics.uptime": {
+      "id": "phD-ORP@3.4/diagnostics.uptime",
+      "version_id": "phD-ORP@3.4",
+      "path": "diagnostics.uptime",
+      "key": "uptime",
+      "label": "Uptime",
+      "description": "Total operating time since last reset.",
+      "type": "leaf",
+      "depth": 1,
+      "parent_id": "phD-ORP@3.4/diagnostics",
+      "children": [],
+      "sort_order": 2,
+      "controller_labels": {}
+    }
+  }
+}
