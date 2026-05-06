@@ -10,10 +10,10 @@ const { emit }                          = require('./src/emitter');
 
 // ── Config ────────────────────────────────────────────────────────────────────
 const CONTENT_DIRS = [
-  path.resolve(__dirname, 'content/controllers'),
-  path.resolve(__dirname, 'content/devices'),
+  path.resolve(__dirname, '../content/controllers'),
+  path.resolve(__dirname, '../content/devices'),
 ];
-const OUT_FILE = path.resolve(__dirname, 'dist/catalog.json');
+const OUT_FILE = path.resolve(__dirname, '../site/catalog.json');
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 function collectMarkdownFiles(dirs) {
