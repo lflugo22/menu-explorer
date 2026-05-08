@@ -1,6 +1,6 @@
 {
   "meta": {
-    "built_at": "2026-05-07T05:24:09.287Z",
+    "built_at": "2026-05-08T05:31:36.650Z",
     "schema_version": "1"
   },
   "controllers": [
@@ -30,6 +30,12 @@
       "id": "3700_cond_module",
       "versions": [
         "3700_cond_module@All"
+      ]
+    },
+    "cl10sc": {
+      "id": "cl10sc",
+      "versions": [
+        "cl10sc@unknown"
       ]
     },
     "ldo_sc_model2": {
@@ -118,6 +124,21 @@
       "source_file": "3700_cond_module.md",
       "root_nodes": [
         "3700_cond_module@All/device_menu"
+      ]
+    },
+    "cl10sc@unknown": {
+      "id": "cl10sc@unknown",
+      "device_type": "cl10sc",
+      "version": "unknown",
+      "label": "CL10sc Chlorine Sensor",
+      "is_controller": false,
+      "max_devices": null,
+      "compatible_controllers": [
+        "sc200"
+      ],
+      "source_file": "clx10_sensor.md",
+      "root_nodes": [
+        "cl10sc@unknown/sensor_setup"
       ]
     },
     "ldo_sc_model2@1.29": {
@@ -4339,6 +4360,665 @@
       "parent_id": "3700_cond_module@All/device_menu.diagnostics",
       "children": [],
       "sort_order": 8,
+      "controller_labels": {}
+    },
+    "cl10sc@unknown/sensor_setup": {
+      "id": "cl10sc@unknown/sensor_setup",
+      "version_id": "cl10sc@unknown",
+      "path": "sensor_setup",
+      "key": "sensor_setup",
+      "label": "Sensor Setup",
+      "description": null,
+      "type": "branch",
+      "depth": 0,
+      "parent_id": null,
+      "children": [
+        "cl10sc@unknown/sensor_setup.configure",
+        "cl10sc@unknown/sensor_setup.calibrate",
+        "cl10sc@unknown/sensor_setup.diag_test"
+      ],
+      "sort_order": 0,
+      "controller_labels": {}
+    },
+    "cl10sc@unknown/sensor_setup.configure": {
+      "id": "cl10sc@unknown/sensor_setup.configure",
+      "version_id": "cl10sc@unknown",
+      "path": "sensor_setup.configure",
+      "key": "configure",
+      "label": "Configure",
+      "description": "Use the Configure menu to enter identification information and display options for the sensor and to change options for data handling and storage.",
+      "type": "branch",
+      "depth": 1,
+      "parent_id": "cl10sc@unknown/sensor_setup",
+      "children": [
+        "cl10sc@unknown/sensor_setup.configure.edit_name",
+        "cl10sc@unknown/sensor_setup.configure.select_param",
+        "cl10sc@unknown/sensor_setup.configure.reset_defaults"
+      ],
+      "sort_order": 0,
+      "controller_labels": {}
+    },
+    "cl10sc@unknown/sensor_setup.configure.edit_name": {
+      "id": "cl10sc@unknown/sensor_setup.configure.edit_name",
+      "version_id": "cl10sc@unknown",
+      "path": "sensor_setup.configure.edit_name",
+      "key": "edit_name",
+      "label": "Edit Name",
+      "description": "Changes the name that corresponds to the sensor on the top of the measure screen; limited to 10 characters; default is the sensor serial number.",
+      "type": "leaf",
+      "depth": 2,
+      "parent_id": "cl10sc@unknown/sensor_setup.configure",
+      "children": [],
+      "sort_order": 0,
+      "controller_labels": {}
+    },
+    "cl10sc@unknown/sensor_setup.configure.select_param": {
+      "id": "cl10sc@unknown/sensor_setup.configure.select_param",
+      "version_id": "cl10sc@unknown",
+      "path": "sensor_setup.configure.select_param",
+      "key": "select_param",
+      "label": "Select Parameters",
+      "description": "Customizes the options for sensor data handling and storage.",
+      "type": "branch",
+      "depth": 2,
+      "parent_id": "cl10sc@unknown/sensor_setup.configure",
+      "children": [
+        "cl10sc@unknown/sensor_setup.configure.select_param.cl2_type"
+      ],
+      "sort_order": 1,
+      "controller_labels": {}
+    },
+    "cl10sc@unknown/sensor_setup.configure.select_param.cl2_type": {
+      "id": "cl10sc@unknown/sensor_setup.configure.select_param.cl2_type",
+      "version_id": "cl10sc@unknown",
+      "path": "sensor_setup.configure.select_param.cl2_type",
+      "key": "cl2_type",
+      "label": "Chlorine Sensor Type",
+      "description": "Select the type of chlorine sensor used — Total CL2 or Free CL2.",
+      "type": "branch",
+      "depth": 3,
+      "parent_id": "cl10sc@unknown/sensor_setup.configure.select_param",
+      "children": [
+        "cl10sc@unknown/sensor_setup.configure.select_param.cl2_type.ph_used"
+      ],
+      "sort_order": 0,
+      "controller_labels": {}
+    },
+    "cl10sc@unknown/sensor_setup.configure.select_param.cl2_type.ph_used": {
+      "id": "cl10sc@unknown/sensor_setup.configure.select_param.cl2_type.ph_used",
+      "version_id": "cl10sc@unknown",
+      "path": "sensor_setup.configure.select_param.cl2_type.ph_used",
+      "key": "ph_used",
+      "label": "pH Sensor Used",
+      "description": "Select whether a pH sensor is used — Yes or No.",
+      "type": "branch",
+      "depth": 4,
+      "parent_id": "cl10sc@unknown/sensor_setup.configure.select_param.cl2_type",
+      "children": [
+        "cl10sc@unknown/sensor_setup.configure.select_param.cl2_type.ph_used.ph_type"
+      ],
+      "sort_order": 0,
+      "controller_labels": {}
+    },
+    "cl10sc@unknown/sensor_setup.configure.select_param.cl2_type.ph_used.ph_type": {
+      "id": "cl10sc@unknown/sensor_setup.configure.select_param.cl2_type.ph_used.ph_type",
+      "version_id": "cl10sc@unknown",
+      "path": "sensor_setup.configure.select_param.cl2_type.ph_used.ph_type",
+      "key": "ph_type",
+      "label": "pH Sensor Type",
+      "description": "If a pH sensor is used, select the type — DIFF PH (pHD) or COMBO pH (pH combination).",
+      "type": "branch",
+      "depth": 5,
+      "parent_id": "cl10sc@unknown/sensor_setup.configure.select_param.cl2_type.ph_used",
+      "children": [
+        "cl10sc@unknown/sensor_setup.configure.select_param.cl2_type.ph_used.ph_type.select_units",
+        "cl10sc@unknown/sensor_setup.configure.select_param.cl2_type.ph_used.ph_type.display_format",
+        "cl10sc@unknown/sensor_setup.configure.select_param.cl2_type.ph_used.ph_type.select_range",
+        "cl10sc@unknown/sensor_setup.configure.select_param.cl2_type.ph_used.ph_type.filter",
+        "cl10sc@unknown/sensor_setup.configure.select_param.cl2_type.ph_used.ph_type.log_setup",
+        "cl10sc@unknown/sensor_setup.configure.select_param.cl2_type.ph_used.ph_type.cal_watch"
+      ],
+      "sort_order": 0,
+      "controller_labels": {}
+    },
+    "cl10sc@unknown/sensor_setup.configure.select_param.cl2_type.ph_used.ph_type.select_units": {
+      "id": "cl10sc@unknown/sensor_setup.configure.select_param.cl2_type.ph_used.ph_type.select_units",
+      "version_id": "cl10sc@unknown",
+      "path": "sensor_setup.configure.select_param.cl2_type.ph_used.ph_type.select_units",
+      "key": "select_units",
+      "label": "Select Units",
+      "description": "Sets the units for the sensor measurements — Auto ppb-ppm, Auto ug/L-mg/L, Fixed ppm, or Fixed mg/L.",
+      "type": "leaf",
+      "depth": 6,
+      "parent_id": "cl10sc@unknown/sensor_setup.configure.select_param.cl2_type.ph_used.ph_type",
+      "children": [],
+      "sort_order": 0,
+      "controller_labels": {}
+    },
+    "cl10sc@unknown/sensor_setup.configure.select_param.cl2_type.ph_used.ph_type.display_format": {
+      "id": "cl10sc@unknown/sensor_setup.configure.select_param.cl2_type.ph_used.ph_type.display_format",
+      "version_id": "cl10sc@unknown",
+      "path": "sensor_setup.configure.select_param.cl2_type.ph_used.ph_type.display_format",
+      "key": "display_format",
+      "label": "Display Format",
+      "description": "Sets the number of decimal places shown on the measure screen — X.XXX, XX.XX (default), XXX.X, or XXXX (Auto).",
+      "type": "leaf",
+      "depth": 6,
+      "parent_id": "cl10sc@unknown/sensor_setup.configure.select_param.cl2_type.ph_used.ph_type",
+      "children": [],
+      "sort_order": 1,
+      "controller_labels": {}
+    },
+    "cl10sc@unknown/sensor_setup.configure.select_param.cl2_type.ph_used.ph_type.select_range": {
+      "id": "cl10sc@unknown/sensor_setup.configure.select_param.cl2_type.ph_used.ph_type.select_range",
+      "version_id": "cl10sc@unknown",
+      "path": "sensor_setup.configure.select_param.cl2_type.ph_used.ph_type.select_range",
+      "key": "select_range",
+      "label": "Select Range",
+      "description": "Sets the measurement range — 0 to 10 ppm.",
+      "type": "leaf",
+      "depth": 6,
+      "parent_id": "cl10sc@unknown/sensor_setup.configure.select_param.cl2_type.ph_used.ph_type",
+      "children": [],
+      "sort_order": 2,
+      "controller_labels": {}
+    },
+    "cl10sc@unknown/sensor_setup.configure.select_param.cl2_type.ph_used.ph_type.filter": {
+      "id": "cl10sc@unknown/sensor_setup.configure.select_param.cl2_type.ph_used.ph_type.filter",
+      "version_id": "cl10sc@unknown",
+      "path": "sensor_setup.configure.select_param.cl2_type.ph_used.ph_type.filter",
+      "key": "filter",
+      "label": "Filter",
+      "description": "Sets a time constant to increase signal stability; calculates the average value during a specified time — 0 (filtering disabled) to 60 seconds.",
+      "type": "leaf",
+      "depth": 6,
+      "parent_id": "cl10sc@unknown/sensor_setup.configure.select_param.cl2_type.ph_used.ph_type",
+      "children": [],
+      "sort_order": 3,
+      "controller_labels": {}
+    },
+    "cl10sc@unknown/sensor_setup.configure.select_param.cl2_type.ph_used.ph_type.log_setup": {
+      "id": "cl10sc@unknown/sensor_setup.configure.select_param.cl2_type.ph_used.ph_type.log_setup",
+      "version_id": "cl10sc@unknown",
+      "path": "sensor_setup.configure.select_param.cl2_type.ph_used.ph_type.log_setup",
+      "key": "log_setup",
+      "label": "Log Setup",
+      "description": "Sets the time interval for event and data logging for chlorine concentration and flow status — 10 s, 30 s, 1 min, 5 min, 15 min (default), or 60 min.",
+      "type": "leaf",
+      "depth": 6,
+      "parent_id": "cl10sc@unknown/sensor_setup.configure.select_param.cl2_type.ph_used.ph_type",
+      "children": [],
+      "sort_order": 4,
+      "controller_labels": {}
+    },
+    "cl10sc@unknown/sensor_setup.configure.select_param.cl2_type.ph_used.ph_type.cal_watch": {
+      "id": "cl10sc@unknown/sensor_setup.configure.select_param.cl2_type.ph_used.ph_type.cal_watch",
+      "version_id": "cl10sc@unknown",
+      "path": "sensor_setup.configure.select_param.cl2_type.ph_used.ph_type.cal_watch",
+      "key": "cal_watch",
+      "label": "Cal Watch",
+      "description": "Sets the pH measurement deviation values that activate alarms.",
+      "type": "branch",
+      "depth": 6,
+      "parent_id": "cl10sc@unknown/sensor_setup.configure.select_param.cl2_type.ph_used.ph_type",
+      "children": [
+        "cl10sc@unknown/sensor_setup.configure.select_param.cl2_type.ph_used.ph_type.cal_watch.ph_err_dev",
+        "cl10sc@unknown/sensor_setup.configure.select_param.cl2_type.ph_used.ph_type.cal_watch.ph_wrn_dev"
+      ],
+      "sort_order": 5,
+      "controller_labels": {}
+    },
+    "cl10sc@unknown/sensor_setup.configure.select_param.cl2_type.ph_used.ph_type.cal_watch.ph_err_dev": {
+      "id": "cl10sc@unknown/sensor_setup.configure.select_param.cl2_type.ph_used.ph_type.cal_watch.ph_err_dev",
+      "version_id": "cl10sc@unknown",
+      "path": "sensor_setup.configure.select_param.cl2_type.ph_used.ph_type.cal_watch.ph_err_dev",
+      "key": "ph_err_dev",
+      "label": "pH Error Deviation",
+      "description": "Sets the pH measurement deviation that activates an error alarm — 1 (default) to 3 pH units.",
+      "type": "leaf",
+      "depth": 7,
+      "parent_id": "cl10sc@unknown/sensor_setup.configure.select_param.cl2_type.ph_used.ph_type.cal_watch",
+      "children": [],
+      "sort_order": 0,
+      "controller_labels": {}
+    },
+    "cl10sc@unknown/sensor_setup.configure.select_param.cl2_type.ph_used.ph_type.cal_watch.ph_wrn_dev": {
+      "id": "cl10sc@unknown/sensor_setup.configure.select_param.cl2_type.ph_used.ph_type.cal_watch.ph_wrn_dev",
+      "version_id": "cl10sc@unknown",
+      "path": "sensor_setup.configure.select_param.cl2_type.ph_used.ph_type.cal_watch.ph_wrn_dev",
+      "key": "ph_wrn_dev",
+      "label": "pH Warning Deviation",
+      "description": "Sets the pH measurement deviation that activates a warning alarm — 0.5 (default) to 1 pH unit.",
+      "type": "leaf",
+      "depth": 7,
+      "parent_id": "cl10sc@unknown/sensor_setup.configure.select_param.cl2_type.ph_used.ph_type.cal_watch",
+      "children": [],
+      "sort_order": 1,
+      "controller_labels": {}
+    },
+    "cl10sc@unknown/sensor_setup.configure.reset_defaults": {
+      "id": "cl10sc@unknown/sensor_setup.configure.reset_defaults",
+      "version_id": "cl10sc@unknown",
+      "path": "sensor_setup.configure.reset_defaults",
+      "key": "reset_defaults",
+      "label": "Reset Defaults",
+      "description": "Sets the configuration menu to the default settings; all sensor information is lost.",
+      "type": "leaf",
+      "depth": 2,
+      "parent_id": "cl10sc@unknown/sensor_setup.configure",
+      "children": [],
+      "sort_order": 2,
+      "controller_labels": {}
+    },
+    "cl10sc@unknown/sensor_setup.calibrate": {
+      "id": "cl10sc@unknown/sensor_setup.calibrate",
+      "version_id": "cl10sc@unknown",
+      "path": "sensor_setup.calibrate",
+      "key": "calibrate",
+      "label": "Calibrate",
+      "description": null,
+      "type": "branch",
+      "depth": 1,
+      "parent_id": "cl10sc@unknown/sensor_setup",
+      "children": [
+        "cl10sc@unknown/sensor_setup.calibrate.chlorine"
+      ],
+      "sort_order": 1,
+      "controller_labels": {}
+    },
+    "cl10sc@unknown/sensor_setup.calibrate.chlorine": {
+      "id": "cl10sc@unknown/sensor_setup.calibrate.chlorine",
+      "version_id": "cl10sc@unknown",
+      "path": "sensor_setup.calibrate.chlorine",
+      "key": "chlorine",
+      "label": "Chlorine",
+      "description": null,
+      "type": "branch",
+      "depth": 2,
+      "parent_id": "cl10sc@unknown/sensor_setup.calibrate",
+      "children": [
+        "cl10sc@unknown/sensor_setup.calibrate.chlorine.one_point_sample",
+        "cl10sc@unknown/sensor_setup.calibrate.chlorine.two_point_sample",
+        "cl10sc@unknown/sensor_setup.calibrate.chlorine.reset_cal_defaults",
+        "cl10sc@unknown/sensor_setup.calibrate.chlorine.cal_options"
+      ],
+      "sort_order": 0,
+      "controller_labels": {}
+    },
+    "cl10sc@unknown/sensor_setup.calibrate.chlorine.one_point_sample": {
+      "id": "cl10sc@unknown/sensor_setup.calibrate.chlorine.one_point_sample",
+      "version_id": "cl10sc@unknown",
+      "path": "sensor_setup.calibrate.chlorine.one_point_sample",
+      "key": "one_point_sample",
+      "label": "1 Point Sample",
+      "description": "Performs a 1-point calibration using either a zero calibration or a process concentration measurement.",
+      "type": "branch",
+      "depth": 3,
+      "parent_id": "cl10sc@unknown/sensor_setup.calibrate.chlorine",
+      "children": [
+        "cl10sc@unknown/sensor_setup.calibrate.chlorine.one_point_sample.output_mode_1pt",
+        "cl10sc@unknown/sensor_setup.calibrate.chlorine.one_point_sample.zero_cal",
+        "cl10sc@unknown/sensor_setup.calibrate.chlorine.one_point_sample.process_conc_1pt"
+      ],
+      "sort_order": 0,
+      "controller_labels": {}
+    },
+    "cl10sc@unknown/sensor_setup.calibrate.chlorine.one_point_sample.output_mode_1pt": {
+      "id": "cl10sc@unknown/sensor_setup.calibrate.chlorine.one_point_sample.output_mode_1pt",
+      "version_id": "cl10sc@unknown",
+      "path": "sensor_setup.calibrate.chlorine.one_point_sample.output_mode_1pt",
+      "key": "output_mode_1pt",
+      "label": "Output Signal Mode",
+      "description": "Sets the output signal behavior during calibration — Active, Hold, or Transfer.",
+      "type": "leaf",
+      "depth": 4,
+      "parent_id": "cl10sc@unknown/sensor_setup.calibrate.chlorine.one_point_sample",
+      "children": [],
+      "sort_order": 0,
+      "controller_labels": {}
+    },
+    "cl10sc@unknown/sensor_setup.calibrate.chlorine.one_point_sample.zero_cal": {
+      "id": "cl10sc@unknown/sensor_setup.calibrate.chlorine.one_point_sample.zero_cal",
+      "version_id": "cl10sc@unknown",
+      "path": "sensor_setup.calibrate.chlorine.one_point_sample.zero_cal",
+      "key": "zero_cal",
+      "label": "Zero Cal",
+      "description": "Performs a zero-point calibration.",
+      "type": "branch",
+      "depth": 4,
+      "parent_id": "cl10sc@unknown/sensor_setup.calibrate.chlorine.one_point_sample",
+      "children": [
+        "cl10sc@unknown/sensor_setup.calibrate.chlorine.one_point_sample.zero_cal.electrical_1pt",
+        "cl10sc@unknown/sensor_setup.calibrate.chlorine.one_point_sample.zero_cal.chemical_1pt"
+      ],
+      "sort_order": 1,
+      "controller_labels": {}
+    },
+    "cl10sc@unknown/sensor_setup.calibrate.chlorine.one_point_sample.zero_cal.electrical_1pt": {
+      "id": "cl10sc@unknown/sensor_setup.calibrate.chlorine.one_point_sample.zero_cal.electrical_1pt",
+      "version_id": "cl10sc@unknown",
+      "path": "sensor_setup.calibrate.chlorine.one_point_sample.zero_cal.electrical_1pt",
+      "key": "electrical_1pt",
+      "label": "Electrical",
+      "description": "Removes the offset produced by the gateway to set the zero-point electronically (no sample used).",
+      "type": "leaf",
+      "depth": 5,
+      "parent_id": "cl10sc@unknown/sensor_setup.calibrate.chlorine.one_point_sample.zero_cal",
+      "children": [],
+      "sort_order": 0,
+      "controller_labels": {}
+    },
+    "cl10sc@unknown/sensor_setup.calibrate.chlorine.one_point_sample.zero_cal.chemical_1pt": {
+      "id": "cl10sc@unknown/sensor_setup.calibrate.chlorine.one_point_sample.zero_cal.chemical_1pt",
+      "version_id": "cl10sc@unknown",
+      "path": "sensor_setup.calibrate.chlorine.one_point_sample.zero_cal.chemical_1pt",
+      "key": "chemical_1pt",
+      "label": "Chemical",
+      "description": "Measures water with no chlorine to set the zero-point chemically.",
+      "type": "leaf",
+      "depth": 5,
+      "parent_id": "cl10sc@unknown/sensor_setup.calibrate.chlorine.one_point_sample.zero_cal",
+      "children": [],
+      "sort_order": 1,
+      "controller_labels": {}
+    },
+    "cl10sc@unknown/sensor_setup.calibrate.chlorine.one_point_sample.process_conc_1pt": {
+      "id": "cl10sc@unknown/sensor_setup.calibrate.chlorine.one_point_sample.process_conc_1pt",
+      "version_id": "cl10sc@unknown",
+      "path": "sensor_setup.calibrate.chlorine.one_point_sample.process_conc_1pt",
+      "key": "process_conc_1pt",
+      "label": "Process Conc",
+      "description": "Measures the chlorine concentration of the process flow (grab sample analysis) and enters the measured value to set the calibration slope.",
+      "type": "leaf",
+      "depth": 4,
+      "parent_id": "cl10sc@unknown/sensor_setup.calibrate.chlorine.one_point_sample",
+      "children": [],
+      "sort_order": 2,
+      "controller_labels": {}
+    },
+    "cl10sc@unknown/sensor_setup.calibrate.chlorine.two_point_sample": {
+      "id": "cl10sc@unknown/sensor_setup.calibrate.chlorine.two_point_sample",
+      "version_id": "cl10sc@unknown",
+      "path": "sensor_setup.calibrate.chlorine.two_point_sample",
+      "key": "two_point_sample",
+      "label": "2 Point Sample",
+      "description": "Performs a 2-point calibration using a zero calibration and a process concentration measurement.",
+      "type": "branch",
+      "depth": 3,
+      "parent_id": "cl10sc@unknown/sensor_setup.calibrate.chlorine",
+      "children": [
+        "cl10sc@unknown/sensor_setup.calibrate.chlorine.two_point_sample.output_mode_2pt",
+        "cl10sc@unknown/sensor_setup.calibrate.chlorine.two_point_sample.cal_type_2pt"
+      ],
+      "sort_order": 1,
+      "controller_labels": {}
+    },
+    "cl10sc@unknown/sensor_setup.calibrate.chlorine.two_point_sample.output_mode_2pt": {
+      "id": "cl10sc@unknown/sensor_setup.calibrate.chlorine.two_point_sample.output_mode_2pt",
+      "version_id": "cl10sc@unknown",
+      "path": "sensor_setup.calibrate.chlorine.two_point_sample.output_mode_2pt",
+      "key": "output_mode_2pt",
+      "label": "Output Signal Mode",
+      "description": "Sets the output signal behavior during calibration — Active, Hold, or Transfer.",
+      "type": "leaf",
+      "depth": 4,
+      "parent_id": "cl10sc@unknown/sensor_setup.calibrate.chlorine.two_point_sample",
+      "children": [],
+      "sort_order": 0,
+      "controller_labels": {}
+    },
+    "cl10sc@unknown/sensor_setup.calibrate.chlorine.two_point_sample.cal_type_2pt": {
+      "id": "cl10sc@unknown/sensor_setup.calibrate.chlorine.two_point_sample.cal_type_2pt",
+      "version_id": "cl10sc@unknown",
+      "path": "sensor_setup.calibrate.chlorine.two_point_sample.cal_type_2pt",
+      "key": "cal_type_2pt",
+      "label": "Calibration Type",
+      "description": "Select the zero-point method — Electrical or Chemical.",
+      "type": "branch",
+      "depth": 4,
+      "parent_id": "cl10sc@unknown/sensor_setup.calibrate.chlorine.two_point_sample",
+      "children": [
+        "cl10sc@unknown/sensor_setup.calibrate.chlorine.two_point_sample.cal_type_2pt.electrical_2pt",
+        "cl10sc@unknown/sensor_setup.calibrate.chlorine.two_point_sample.cal_type_2pt.chemical_2pt"
+      ],
+      "sort_order": 1,
+      "controller_labels": {}
+    },
+    "cl10sc@unknown/sensor_setup.calibrate.chlorine.two_point_sample.cal_type_2pt.electrical_2pt": {
+      "id": "cl10sc@unknown/sensor_setup.calibrate.chlorine.two_point_sample.cal_type_2pt.electrical_2pt",
+      "version_id": "cl10sc@unknown",
+      "path": "sensor_setup.calibrate.chlorine.two_point_sample.cal_type_2pt.electrical_2pt",
+      "key": "electrical_2pt",
+      "label": "Electrical",
+      "description": "Removes the offset produced by the gateway for the zero-point, then measures the process sample to calculate slope.",
+      "type": "leaf",
+      "depth": 5,
+      "parent_id": "cl10sc@unknown/sensor_setup.calibrate.chlorine.two_point_sample.cal_type_2pt",
+      "children": [],
+      "sort_order": 0,
+      "controller_labels": {}
+    },
+    "cl10sc@unknown/sensor_setup.calibrate.chlorine.two_point_sample.cal_type_2pt.chemical_2pt": {
+      "id": "cl10sc@unknown/sensor_setup.calibrate.chlorine.two_point_sample.cal_type_2pt.chemical_2pt",
+      "version_id": "cl10sc@unknown",
+      "path": "sensor_setup.calibrate.chlorine.two_point_sample.cal_type_2pt.chemical_2pt",
+      "key": "chemical_2pt",
+      "label": "Chemical",
+      "description": "Measures water with no chlorine for the zero-point, then measures the process sample to calculate slope.",
+      "type": "leaf",
+      "depth": 5,
+      "parent_id": "cl10sc@unknown/sensor_setup.calibrate.chlorine.two_point_sample.cal_type_2pt",
+      "children": [],
+      "sort_order": 1,
+      "controller_labels": {}
+    },
+    "cl10sc@unknown/sensor_setup.calibrate.chlorine.reset_cal_defaults": {
+      "id": "cl10sc@unknown/sensor_setup.calibrate.chlorine.reset_cal_defaults",
+      "version_id": "cl10sc@unknown",
+      "path": "sensor_setup.calibrate.chlorine.reset_cal_defaults",
+      "key": "reset_cal_defaults",
+      "label": "Reset Defaults",
+      "description": "Replaces the user calibration settings with the default calibration settings.",
+      "type": "leaf",
+      "depth": 3,
+      "parent_id": "cl10sc@unknown/sensor_setup.calibrate.chlorine",
+      "children": [],
+      "sort_order": 2,
+      "controller_labels": {}
+    },
+    "cl10sc@unknown/sensor_setup.calibrate.chlorine.cal_options": {
+      "id": "cl10sc@unknown/sensor_setup.calibrate.chlorine.cal_options",
+      "version_id": "cl10sc@unknown",
+      "path": "sensor_setup.calibrate.chlorine.cal_options",
+      "key": "cal_options",
+      "label": "Cal Options",
+      "description": "Sets calibration reminder, auto stabilization, and operator ID options.",
+      "type": "branch",
+      "depth": 3,
+      "parent_id": "cl10sc@unknown/sensor_setup.calibrate.chlorine",
+      "children": [
+        "cl10sc@unknown/sensor_setup.calibrate.chlorine.cal_options.auto_stab",
+        "cl10sc@unknown/sensor_setup.calibrate.chlorine.cal_options.cal_reminder",
+        "cl10sc@unknown/sensor_setup.calibrate.chlorine.cal_options.op_id_on_cal"
+      ],
+      "sort_order": 3,
+      "controller_labels": {}
+    },
+    "cl10sc@unknown/sensor_setup.calibrate.chlorine.cal_options.auto_stab": {
+      "id": "cl10sc@unknown/sensor_setup.calibrate.chlorine.cal_options.auto_stab",
+      "version_id": "cl10sc@unknown",
+      "path": "sensor_setup.calibrate.chlorine.cal_options.auto_stab",
+      "key": "auto_stab",
+      "label": "Auto Stab",
+      "description": "Enables automatic acceptance of the measurement signal when stable, advancing the calibration automatically — On or Off (default); stabilization range 25 to 75 ppb.",
+      "type": "leaf",
+      "depth": 4,
+      "parent_id": "cl10sc@unknown/sensor_setup.calibrate.chlorine.cal_options",
+      "children": [],
+      "sort_order": 0,
+      "controller_labels": {}
+    },
+    "cl10sc@unknown/sensor_setup.calibrate.chlorine.cal_options.cal_reminder": {
+      "id": "cl10sc@unknown/sensor_setup.calibrate.chlorine.cal_options.cal_reminder",
+      "version_id": "cl10sc@unknown",
+      "path": "sensor_setup.calibrate.chlorine.cal_options.cal_reminder",
+      "key": "cal_reminder",
+      "label": "Cal Reminder",
+      "description": "Sets a reminder for the next calibration in days, months, or years.",
+      "type": "leaf",
+      "depth": 4,
+      "parent_id": "cl10sc@unknown/sensor_setup.calibrate.chlorine.cal_options",
+      "children": [],
+      "sort_order": 1,
+      "controller_labels": {}
+    },
+    "cl10sc@unknown/sensor_setup.calibrate.chlorine.cal_options.op_id_on_cal": {
+      "id": "cl10sc@unknown/sensor_setup.calibrate.chlorine.cal_options.op_id_on_cal",
+      "version_id": "cl10sc@unknown",
+      "path": "sensor_setup.calibrate.chlorine.cal_options.op_id_on_cal",
+      "key": "op_id_on_cal",
+      "label": "Operator ID on Cal",
+      "description": "Includes an operator ID with calibration data — Yes or No (default); the ID is entered during calibration.",
+      "type": "leaf",
+      "depth": 4,
+      "parent_id": "cl10sc@unknown/sensor_setup.calibrate.chlorine.cal_options",
+      "children": [],
+      "sort_order": 2,
+      "controller_labels": {}
+    },
+    "cl10sc@unknown/sensor_setup.diag_test": {
+      "id": "cl10sc@unknown/sensor_setup.diag_test",
+      "version_id": "cl10sc@unknown",
+      "path": "sensor_setup.diag_test",
+      "key": "diag_test",
+      "label": "Diag/Test",
+      "description": "The diagnostic and test menu shows current and historical information about the chlorine analyzer.",
+      "type": "branch",
+      "depth": 1,
+      "parent_id": "cl10sc@unknown/sensor_setup",
+      "children": [
+        "cl10sc@unknown/sensor_setup.diag_test.gateway_info",
+        "cl10sc@unknown/sensor_setup.diag_test.cal_days",
+        "cl10sc@unknown/sensor_setup.diag_test.cal_history",
+        "cl10sc@unknown/sensor_setup.diag_test.rst_cal_history",
+        "cl10sc@unknown/sensor_setup.diag_test.signals",
+        "cl10sc@unknown/sensor_setup.diag_test.sensor_days",
+        "cl10sc@unknown/sensor_setup.diag_test.rst_sensors",
+        "cl10sc@unknown/sensor_setup.diag_test.calibration"
+      ],
+      "sort_order": 2,
+      "controller_labels": {}
+    },
+    "cl10sc@unknown/sensor_setup.diag_test.gateway_info": {
+      "id": "cl10sc@unknown/sensor_setup.diag_test.gateway_info",
+      "version_id": "cl10sc@unknown",
+      "path": "sensor_setup.diag_test.gateway_info",
+      "key": "gateway_info",
+      "label": "Gateway Info",
+      "description": "Shows the firmware version, driver version, serial number, and boot version for the controller and the types of sensors connected.",
+      "type": "leaf",
+      "depth": 2,
+      "parent_id": "cl10sc@unknown/sensor_setup.diag_test",
+      "children": [],
+      "sort_order": 0,
+      "controller_labels": {}
+    },
+    "cl10sc@unknown/sensor_setup.diag_test.cal_days": {
+      "id": "cl10sc@unknown/sensor_setup.diag_test.cal_days",
+      "version_id": "cl10sc@unknown",
+      "path": "sensor_setup.diag_test.cal_days",
+      "key": "cal_days",
+      "label": "Cal Days",
+      "description": "Shows the number of days since the sensor was last calibrated.",
+      "type": "leaf",
+      "depth": 2,
+      "parent_id": "cl10sc@unknown/sensor_setup.diag_test",
+      "children": [],
+      "sort_order": 1,
+      "controller_labels": {}
+    },
+    "cl10sc@unknown/sensor_setup.diag_test.cal_history": {
+      "id": "cl10sc@unknown/sensor_setup.diag_test.cal_history",
+      "version_id": "cl10sc@unknown",
+      "path": "sensor_setup.diag_test.cal_history",
+      "key": "cal_history",
+      "label": "Cal History",
+      "description": "Shows a list of the times when the sensor was calibrated; push ENTER to scroll through entries and view a summary of calibration data.",
+      "type": "leaf",
+      "depth": 2,
+      "parent_id": "cl10sc@unknown/sensor_setup.diag_test",
+      "children": [],
+      "sort_order": 2,
+      "controller_labels": {}
+    },
+    "cl10sc@unknown/sensor_setup.diag_test.rst_cal_history": {
+      "id": "cl10sc@unknown/sensor_setup.diag_test.rst_cal_history",
+      "version_id": "cl10sc@unknown",
+      "path": "sensor_setup.diag_test.rst_cal_history",
+      "key": "rst_cal_history",
+      "label": "Reset Cal History",
+      "description": "Resets the sensor calibration history; requires passcode.",
+      "type": "leaf",
+      "depth": 2,
+      "parent_id": "cl10sc@unknown/sensor_setup.diag_test",
+      "children": [],
+      "sort_order": 3,
+      "controller_labels": {}
+    },
+    "cl10sc@unknown/sensor_setup.diag_test.signals": {
+      "id": "cl10sc@unknown/sensor_setup.diag_test.signals",
+      "version_id": "cl10sc@unknown",
+      "path": "sensor_setup.diag_test.signals",
+      "key": "signals",
+      "label": "Signals",
+      "description": "Shows the sensor measurement signal value in mV.",
+      "type": "leaf",
+      "depth": 2,
+      "parent_id": "cl10sc@unknown/sensor_setup.diag_test",
+      "children": [],
+      "sort_order": 4,
+      "controller_labels": {}
+    },
+    "cl10sc@unknown/sensor_setup.diag_test.sensor_days": {
+      "id": "cl10sc@unknown/sensor_setup.diag_test.sensor_days",
+      "version_id": "cl10sc@unknown",
+      "path": "sensor_setup.diag_test.sensor_days",
+      "key": "sensor_days",
+      "label": "Sensor Days",
+      "description": "Shows the number of days the sensor has been in operation.",
+      "type": "leaf",
+      "depth": 2,
+      "parent_id": "cl10sc@unknown/sensor_setup.diag_test",
+      "children": [],
+      "sort_order": 5,
+      "controller_labels": {}
+    },
+    "cl10sc@unknown/sensor_setup.diag_test.rst_sensors": {
+      "id": "cl10sc@unknown/sensor_setup.diag_test.rst_sensors",
+      "version_id": "cl10sc@unknown",
+      "path": "sensor_setup.diag_test.rst_sensors",
+      "key": "rst_sensors",
+      "label": "Reset Sensors",
+      "description": "Resets the sensor days and calibration days to default; requires passcode.",
+      "type": "leaf",
+      "depth": 2,
+      "parent_id": "cl10sc@unknown/sensor_setup.diag_test",
+      "children": [],
+      "sort_order": 6,
+      "controller_labels": {}
+    },
+    "cl10sc@unknown/sensor_setup.diag_test.calibration": {
+      "id": "cl10sc@unknown/sensor_setup.diag_test.calibration",
+      "version_id": "cl10sc@unknown",
+      "path": "sensor_setup.diag_test.calibration",
+      "key": "calibration",
+      "label": "Calibration",
+      "description": "Shows the slope and offset values for chlorine and pH (if pH sensor is used), and the temperature offset (if pH sensor is used).",
+      "type": "leaf",
+      "depth": 2,
+      "parent_id": "cl10sc@unknown/sensor_setup.diag_test",
+      "children": [],
+      "sort_order": 7,
       "controller_labels": {}
     },
     "ldo_sc_model2@1.29/device_menu": {
