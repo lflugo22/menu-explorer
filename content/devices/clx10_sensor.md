@@ -13,70 +13,68 @@ compatible_controllers:
 
 - edit_name: Edit Name
   > Changes the name that corresponds to the sensor on the top of the measure screen; limited to 10 characters; default is the sensor serial number.
-- select_param: Select Parameters
+- select_param: Select Param.
   > Customizes the options for sensor data handling and storage.
   - cl2_type: Chlorine Sensor Type
     > Select the type of chlorine sensor used — Total CL2 or Free CL2.
     - ph_used: pH Sensor Used
-        > Select whether a pH sensor is used — Yes or No.
+      > Select whether a pH sensor is used — Yes or No.
         - ph_type: pH Sensor Type
-            > If a pH sensor is used, select the type — DIFF PH (pHD) or COMBO pH (pH combination).
-            - select_units: Select Units
+          > If a pH sensor is used, select the type — DIFF PH (pHD) or COMBO pH (pH combination).
+            - configure_cl2: Chlorine
+              > Customize the sensor parameters
+              - select_units: Select Units
                 > Sets the units for the sensor measurements — Auto ppb-ppm, Auto ug/L-mg/L, Fixed ppm, or Fixed mg/L.
-            - display_format: Display Format
+              - display_format: Display Format
                 > Sets the number of decimal places shown on the measure screen — X.XXX, XX.XX (default), XXX.X, or XXXX (Auto).
-            - select_range: Select Range
+              - select_range: Select Range
                 > Sets the measurement range — 0 to 10 ppm.
-            - filter: Filter
-                > Sets a time constant to increase signal stability; calculates the average value during a specified time — 0 (filtering disabled) to 60 seconds.
-            - log_setup: Log Setup
-                > Sets the time interval for event and data logging for chlorine concentration and flow status — 10 s, 30 s, 1 min, 5 min, 15 min (default), or 60 min.
-            - cal_watch: Cal Watch
+              - cal_watch: Cal Watch
                 > Shown only if a pH sensor is used; sets alarm conditions for chlorine and/or pH measurement deviations.
-                - cal_monitor: Cal Monitor
-                > Select the measurement(s) to monitor for Cal Watch alarms.
-                - monitor_all: All
-                    > Enables an error or warning alarm when chlorine and/or pH measurement deviations meet or exceed the selected deviation values.
-                - monitor_cl2: CL2 Only
-                    > Enables an error or warning alarm when a chlorine measurement deviation meets or exceeds the selected chlorine deviation values.
-                - monitor_ph: pH Only
-                    > Enables an error or warning alarm when a pH measurement deviation meets or exceeds the selected pH deviation values.
-                - monitor_none: None
-                    > Disables all Cal Watch alarms.
-                - activate_tmr: Activate Timer
-                > Sets the amount of time a measurement can be outside the deviation range before an alarm occurs.
-                - act_tmr_all: All Activate Timer
-                    > Sets the time the chlorine AND pH measurements can be out of range before an alarm occurs — 10 to 99 minutes (default 10 min).
-                - confid_all: All Confidence Level
-                    > Sets the percentage rate at which chlorine AND pH measurements must be out of range before an alarm occurs and must be in range before auto-cancellation — 50 to 95% (default).
-                - act_tmr_cl2_ph: CL2/pH Only Activate Timer
-                    > Sets the time the chlorine OR pH measurements can be out of range before an alarm occurs — 10 to 999 minutes (default 30 min).
-                - confid_cl2_ph: CL2/pH Only Confidence Level
-                    > Sets the percentage rate at which chlorine OR pH measurements must be out of range before an alarm occurs and must be in range before auto-cancellation — 50 to 95% (default).
-                - act_tmr_lcc: LCC Activate Timer
-                    > Sets the time a chlorine measurement can be 0.5 ppm or higher before an alarm occurs (only if the previous calibration used a low chlorine concentration process flow) — 10 to 999 minutes (default 30 min).
-                - confid_lcc: LCC Confidence Level
-                    > Sets the percentage rate at which chlorine measurements must be ≥0.5 ppm before an alarm occurs and must be <0.5 ppm before auto-cancellation — 50 to 95% (default).
-                - deactivate_tmr: Deactivate Timer
-                > Sets the amount of time an alarm is on before it is automatically canceled if measurements return to range.
-                - deact_tmr_all: All Deactivate Timer
-                    > Sets the time a chlorine AND pH deviation alarm is on before it is canceled — 10 to 99 minutes (default 30 min).
-                - deact_tmr_cl2_ph: CL2/pH Only Deactivate Timer
-                    > Sets the time a chlorine OR pH deviation alarm is on before it is canceled — 10 to 999 minutes (default 30 min).
-                - deact_tmr_lcc: LCC Deactivate Timer
-                    > Sets the time an LCC alarm is on before it is canceled — 10 to 999 minutes (default 30 min).
-                - cl2_deviation: CL2 Deviation
-                > Sets the chlorine measurement deviation values that activate alarms.
-                - cl2_err_dev: CL2 Error Deviation
-                    > Sets the chlorine measurement deviation that activates an error alarm — 30 to 99% (default 50%).
-                - cl2_wrn_dev: CL2 Warning Deviation
-                    > Sets the chlorine measurement deviation that activates a warning alarm — 10 to 30% (default 20%).
-                - ph_deviation: pH Deviation
-                > Sets the pH measurement deviation values that activate alarms.
-                - ph_err_dev: pH Error Deviation
-                    > Sets the pH measurement deviation that activates an error alarm — 1 (default) to 3 pH units.
-                - ph_wrn_dev: pH Warning Deviation
-                    > Sets the pH measurement deviation that activates a warning alarm — 0.5 (default) to 1 pH unit.
+                  - cal_monitor: Cal Monitor
+                    > Select the measurement(s) to monitor for Cal Watch alarms.
+                    - monitor_all: All
+                      > Enables an error or warning alarm when chlorine and/or pH measurement deviations meet or exceed the selected deviation values.
+                    - monitor_cl2: CL2 Only
+                      > Enables an error or warning alarm when a chlorine measurement deviation meets or exceeds the selected chlorine deviation values.
+                    - monitor_ph: pH Only
+                      > Enables an error or warning alarm when a pH measurement deviation meets or exceeds the selected pH deviation values.
+                    - monitor_none: None
+                      > Disables all Cal Watch alarms.
+                  - activate_tmr: Activate TMR
+                    > Sets the amount of time a measurement can be outside the deviation range before an alarm occurs. 
+                    - act_tmr_all: All
+                      > ACTIVATE TMR: Sets the time the chlorine AND pH measurements can be out of range before an alarm occurs — 10 to 99 minutes (default 10 min). CONFID LEVEL: Sets the percentage rate at which chlorine AND pH measurements must be out of range before an alarm occurs and must be in range before auto-cancellation — 50 to 95% (default).
+                    - act_tmr_cl2_ph: CL2/pH Only
+                      > ACTIVATE TMR: Sets the time the chlorine OR pH measurements can be out of range before an alarm occurs — 10 to 999 minutes (default 30 min). CONFID LEVEL: Sets the percentage rate at which chlorine OR pH measurements must be out of range before an alarm occurs and must be in range before auto-cancellation — 50 to 95% (default).
+                    - act_tmr_lcc: LCC
+                      > ACTIVATE TMR: Sets the time a chlorine measurement can be 0.5 ppm or higher before an alarm occurs (only if the previous calibration used a low chlorine concentration process flow) — 10 to 999 minutes (default 30 min). CONFID LEVEL: Sets the percentage rate at which chlorine measurements must be ≥0.5 ppm before an alarm occurs and must be <0.5 ppm before auto-cancellation — 50 to 95% (default).
+                  - deactivate_tmr: Deactivate Timer
+                    > Sets the amount of time an alarm is on before it is automatically canceled if measurements return to range.
+                    - deact_tmr_all: All
+                      > Sets the time a chlorine AND pH deviation alarm is on before it is canceled — 10 to 99 minutes (default 30 min).
+                    - deact_tmr_cl2_ph: CL2/pH Only
+                      > Sets the time a chlorine OR pH deviation alarm is on before it is canceled — 10 to 999 minutes (default 30 min).
+                    - deact_tmr_lcc: LCC
+                      > Sets the time an LCC alarm is on before it is canceled — 10 to 999 minutes (default 30 min).
+                  - cl2_deviation: CL2 Deviation
+                    > Sets the chlorine measurement deviation values that activate alarms.
+                    - cl2_err_dev: CL2 Error Deviation
+                      > Sets the chlorine measurement deviation that activates an error alarm — 30 to 99% (default 50%).
+                    - cl2_wrn_dev: CL2 Warning Deviation
+                      > Sets the chlorine measurement deviation that activates a warning alarm — 10 to 30% (default 20%).
+                  - ph_deviation: pH Deviation
+                    > Sets the pH measurement deviation values that activate alarms.
+                    - ph_err_dev: pH Error Deviation
+                      > Sets the pH measurement deviation that activates an error alarm — 1 (default) to 3 pH units.
+                    - ph_wrn_dev: pH Warning Deviation
+                      > Sets the pH measurement deviation that activates a warning alarm — 0.5 (default) to 1 pH unit.
+              - filter: Filter
+                > Sets a time constant to increase signal stability; calculates the average value during a specified time — 0 (filtering disabled) to 60 seconds.
+              - log_setup: Log Setup
+                > Sets the time interval for event and data logging for chlorine concentration and flow status — 10 s, 30 s, 1 min, 5 min, 15 min (default), or 60 min.
+            - configure_pH: pH
+            - configure_temp: Temperature
 - reset_defaults: Reset Defaults
   > Sets the configuration menu to the default settings; all sensor information is lost.
 
