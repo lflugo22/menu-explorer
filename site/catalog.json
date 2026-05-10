@@ -1,6 +1,6 @@
 {
   "meta": {
-    "built_at": "2026-05-09T05:07:49.201Z",
+    "built_at": "2026-05-10T04:05:30.815Z",
     "schema_version": "1"
   },
   "controllers": [
@@ -37,6 +37,12 @@
       "id": "3700_cond_module",
       "versions": [
         "3700_cond_module@All"
+      ]
+    },
+    "cl17sc": {
+      "id": "cl17sc",
+      "versions": [
+        "cl17sc@Latest"
       ]
     },
     "cl10sc": {
@@ -159,6 +165,23 @@
         "3700_cond_module@All/device_menu"
       ]
     },
+    "cl17sc@Latest": {
+      "id": "cl17sc@Latest",
+      "device_type": "cl17sc",
+      "version": "Latest",
+      "label": "CL17sc",
+      "is_controller": false,
+      "max_devices": null,
+      "compatible_controllers": [
+        "sc4500",
+        "sc200",
+        "sc1000"
+      ],
+      "source_file": "cl17sc.md",
+      "root_nodes": [
+        "cl17sc@Latest/device_menu"
+      ]
+    },
     "cl10sc@unknown": {
       "id": "cl10sc@unknown",
       "device_type": "cl10sc",
@@ -167,7 +190,8 @@
       "is_controller": false,
       "max_devices": null,
       "compatible_controllers": [
-        "sc200"
+        "sc200",
+        "sc4500"
       ],
       "source_file": "clx10_sensor.md",
       "root_nodes": [
@@ -6463,6 +6487,248 @@
       "parent_id": "3700_cond_module@All/device_menu.diagnostics",
       "children": [],
       "sort_order": 8,
+      "controller_labels": {}
+    },
+    "cl17sc@Latest/device_menu": {
+      "id": "cl17sc@Latest/device_menu",
+      "version_id": "cl17sc@Latest",
+      "path": "device_menu",
+      "key": "device_menu",
+      "label": "Device Menu",
+      "description": "The analyzer menu is accessed through the connected SC Controller. On the SC4500, select the device tile then choose Device menu. On SC200/SC1000, go to the main menu then select SENSOR SETUP and select the analyzer.",
+      "type": "branch",
+      "depth": 0,
+      "parent_id": null,
+      "children": [
+        "cl17sc@Latest/device_menu.settings",
+        "cl17sc@Latest/device_menu.prime_reagents",
+        "cl17sc@Latest/device_menu.grab_sample",
+        "cl17sc@Latest/device_menu.standard_tasks"
+      ],
+      "sort_order": 0,
+      "controller_labels": {}
+    },
+    "cl17sc@Latest/device_menu.settings": {
+      "id": "cl17sc@Latest/device_menu.settings",
+      "version_id": "cl17sc@Latest",
+      "path": "device_menu.settings",
+      "key": "settings",
+      "label": "Settings",
+      "description": "Configure the analyzer name, signal averaging, chlorine measurement type, bubble rejection, and alarm setpoints.",
+      "type": "branch",
+      "depth": 1,
+      "parent_id": "cl17sc@Latest/device_menu",
+      "children": [
+        "cl17sc@Latest/device_menu.settings.edit_name",
+        "cl17sc@Latest/device_menu.settings.signal_average",
+        "cl17sc@Latest/device_menu.settings.measurement_type",
+        "cl17sc@Latest/device_menu.settings.bubble_reject",
+        "cl17sc@Latest/device_menu.settings.high_cl_alarm",
+        "cl17sc@Latest/device_menu.settings.low_cl_alarm",
+        "cl17sc@Latest/device_menu.settings.sensor_info",
+        "cl17sc@Latest/device_menu.settings.reset",
+        "cl17sc@Latest/device_menu.settings.service"
+      ],
+      "sort_order": 0,
+      "controller_labels": {}
+    },
+    "cl17sc@Latest/device_menu.settings.edit_name": {
+      "id": "cl17sc@Latest/device_menu.settings.edit_name",
+      "version_id": "cl17sc@Latest",
+      "path": "device_menu.settings.edit_name",
+      "key": "edit_name",
+      "label": "Edit Name",
+      "description": "Sets the display name of the analyzer shown on the controller and in log files.",
+      "type": "leaf",
+      "depth": 2,
+      "parent_id": "cl17sc@Latest/device_menu.settings",
+      "children": [],
+      "sort_order": 0,
+      "controller_labels": {}
+    },
+    "cl17sc@Latest/device_menu.settings.signal_average": {
+      "id": "cl17sc@Latest/device_menu.settings.signal_average",
+      "version_id": "cl17sc@Latest",
+      "path": "device_menu.settings.signal_average",
+      "key": "signal_average",
+      "label": "Signal Average",
+      "description": "Sets the number of consecutive measurements used to calculate the displayed average; options are 1 (averaging disabled), 2, 3, or Irregular Value (which rejects readings unusually higher or lower than recent values, holding the last good reading for up to three consecutive rejections).",
+      "type": "leaf",
+      "depth": 2,
+      "parent_id": "cl17sc@Latest/device_menu.settings",
+      "children": [],
+      "sort_order": 1,
+      "controller_labels": {}
+    },
+    "cl17sc@Latest/device_menu.settings.measurement_type": {
+      "id": "cl17sc@Latest/device_menu.settings.measurement_type",
+      "version_id": "cl17sc@Latest",
+      "path": "device_menu.settings.measurement_type",
+      "key": "measurement_type",
+      "label": "Measurement Type",
+      "description": "Sets the type of chlorine measured: Free Chlorine (default) or Total Chlorine — select to match the label on the installed reagent bottles.",
+      "type": "leaf",
+      "depth": 2,
+      "parent_id": "cl17sc@Latest/device_menu.settings",
+      "children": [],
+      "sort_order": 2,
+      "controller_labels": {}
+    },
+    "cl17sc@Latest/device_menu.settings.bubble_reject": {
+      "id": "cl17sc@Latest/device_menu.settings.bubble_reject",
+      "version_id": "cl17sc@Latest",
+      "path": "device_menu.settings.bubble_reject",
+      "key": "bubble_reject",
+      "label": "Bubble Reject",
+      "description": "Enables or disables bubble rejection (Yes/No, default No) to reduce signal noise caused by air bubbles in the sample.",
+      "type": "leaf",
+      "depth": 2,
+      "parent_id": "cl17sc@Latest/device_menu.settings",
+      "children": [],
+      "sort_order": 3,
+      "controller_labels": {}
+    },
+    "cl17sc@Latest/device_menu.settings.high_cl_alarm": {
+      "id": "cl17sc@Latest/device_menu.settings.high_cl_alarm",
+      "version_id": "cl17sc@Latest",
+      "path": "device_menu.settings.high_cl_alarm",
+      "key": "high_cl_alarm",
+      "label": "High Chlorine Alarm Limit",
+      "description": "Sets the chlorine concentration threshold that triggers a high chlorine alarm; range 0.00–10.00 mg/L (default 4.00 mg/L).",
+      "type": "leaf",
+      "depth": 2,
+      "parent_id": "cl17sc@Latest/device_menu.settings",
+      "children": [],
+      "sort_order": 4,
+      "controller_labels": {}
+    },
+    "cl17sc@Latest/device_menu.settings.low_cl_alarm": {
+      "id": "cl17sc@Latest/device_menu.settings.low_cl_alarm",
+      "version_id": "cl17sc@Latest",
+      "path": "device_menu.settings.low_cl_alarm",
+      "key": "low_cl_alarm",
+      "label": "Low Chlorine Alarm Limit",
+      "description": "Sets the chlorine concentration threshold that triggers a low chlorine alarm; range 0.00–10.00 mg/L (default 0.20 mg/L).",
+      "type": "leaf",
+      "depth": 2,
+      "parent_id": "cl17sc@Latest/device_menu.settings",
+      "children": [],
+      "sort_order": 5,
+      "controller_labels": {}
+    },
+    "cl17sc@Latest/device_menu.settings.sensor_info": {
+      "id": "cl17sc@Latest/device_menu.settings.sensor_info",
+      "version_id": "cl17sc@Latest",
+      "path": "device_menu.settings.sensor_info",
+      "key": "sensor_info",
+      "label": "Sensor Information",
+      "description": "Displays the analyzer serial number, software version, boot version, and driver version.",
+      "type": "leaf",
+      "depth": 2,
+      "parent_id": "cl17sc@Latest/device_menu.settings",
+      "children": [],
+      "sort_order": 6,
+      "controller_labels": {}
+    },
+    "cl17sc@Latest/device_menu.settings.reset": {
+      "id": "cl17sc@Latest/device_menu.settings.reset",
+      "version_id": "cl17sc@Latest",
+      "path": "device_menu.settings.reset",
+      "key": "reset",
+      "label": "Reset",
+      "description": "Select Yes to restore all configuration settings to factory default values.",
+      "type": "leaf",
+      "depth": 2,
+      "parent_id": "cl17sc@Latest/device_menu.settings",
+      "children": [],
+      "sort_order": 7,
+      "controller_labels": {}
+    },
+    "cl17sc@Latest/device_menu.settings.service": {
+      "id": "cl17sc@Latest/device_menu.settings.service",
+      "version_id": "cl17sc@Latest",
+      "path": "device_menu.settings.service",
+      "key": "service",
+      "label": "Service",
+      "description": "For service use only.",
+      "type": "leaf",
+      "depth": 2,
+      "parent_id": "cl17sc@Latest/device_menu.settings",
+      "children": [],
+      "sort_order": 8,
+      "controller_labels": {}
+    },
+    "cl17sc@Latest/device_menu.prime_reagents": {
+      "id": "cl17sc@Latest/device_menu.prime_reagents",
+      "version_id": "cl17sc@Latest",
+      "path": "device_menu.prime_reagents",
+      "key": "prime_reagents",
+      "label": "Prime Reagents",
+      "description": "Fills the reagent tubing and removes air from the lines; required after installation or reagent bottle replacement.",
+      "type": "leaf",
+      "depth": 1,
+      "parent_id": "cl17sc@Latest/device_menu",
+      "children": [],
+      "sort_order": 1,
+      "controller_labels": {}
+    },
+    "cl17sc@Latest/device_menu.grab_sample": {
+      "id": "cl17sc@Latest/device_menu.grab_sample",
+      "version_id": "cl17sc@Latest",
+      "path": "device_menu.grab_sample",
+      "key": "grab_sample",
+      "label": "Grab Sample",
+      "description": "Adds a water sample or chlorine standard solution directly to the cell for measurement, used to verify analyzer performance or measure a sample collected from another location.",
+      "type": "leaf",
+      "depth": 1,
+      "parent_id": "cl17sc@Latest/device_menu",
+      "children": [],
+      "sort_order": 2,
+      "controller_labels": {}
+    },
+    "cl17sc@Latest/device_menu.standard_tasks": {
+      "id": "cl17sc@Latest/device_menu.standard_tasks",
+      "version_id": "cl17sc@Latest",
+      "path": "device_menu.standard_tasks",
+      "key": "standard_tasks",
+      "label": "Standard Tasks",
+      "description": null,
+      "type": "branch",
+      "depth": 1,
+      "parent_id": "cl17sc@Latest/device_menu",
+      "children": [
+        "cl17sc@Latest/device_menu.standard_tasks.clean_cell",
+        "cl17sc@Latest/device_menu.standard_tasks.replace_reagents"
+      ],
+      "sort_order": 3,
+      "controller_labels": {}
+    },
+    "cl17sc@Latest/device_menu.standard_tasks.clean_cell": {
+      "id": "cl17sc@Latest/device_menu.standard_tasks.clean_cell",
+      "version_id": "cl17sc@Latest",
+      "path": "device_menu.standard_tasks.clean_cell",
+      "key": "clean_cell",
+      "label": "Cell Cleaning",
+      "description": "Stops measurements and prompts the user to manually clean the colorimetric cell with sulfuric acid solution and cotton swabs; outputs can be held at last value or transferred during the task.",
+      "type": "leaf",
+      "depth": 2,
+      "parent_id": "cl17sc@Latest/device_menu.standard_tasks",
+      "children": [],
+      "sort_order": 0,
+      "controller_labels": {}
+    },
+    "cl17sc@Latest/device_menu.standard_tasks.replace_reagents": {
+      "id": "cl17sc@Latest/device_menu.standard_tasks.replace_reagents",
+      "version_id": "cl17sc@Latest",
+      "path": "device_menu.standard_tasks.replace_reagents",
+      "key": "replace_reagents",
+      "label": "Replace Reagents",
+      "description": "Stops measurements and guides the user through replacing the buffer and indicator reagent bottles; outputs can be held at last value or transferred during the task.",
+      "type": "leaf",
+      "depth": 2,
+      "parent_id": "cl17sc@Latest/device_menu.standard_tasks",
+      "children": [],
+      "sort_order": 1,
       "controller_labels": {}
     },
     "cl10sc@unknown/sensor_setup": {

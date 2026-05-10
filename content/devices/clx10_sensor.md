@@ -4,6 +4,7 @@ version: "unknown"
 label: "CL10sc Chlorine Sensor"
 compatible_controllers:
   - sc200
+  - sc4500
 ---
 
 ## Sensor Setup

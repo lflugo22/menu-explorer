@@ -338,23 +338,76 @@ function showDevicePicker(appEl, controllerVersion) {
   const state = session.getState();
   const maxDevices = controllerVersion.max_devices;
 
-  list.innerHTML = compatible.length === 0
-    ? `<p class="picker-empty">No compatible devices found in catalog</p>`
-    : compatible.map(dv => `
+  // Add search input to the modal
+  list.innerHTML = `
+    <input type="text" id="deviceSearch" placeholder="Search devices..." class="device-search-input">
+    <div class="device-list-container" id="deviceListContainer">
+      ${compatible.length === 0
+        ? `<p class="picker-empty">No compatible devices found in catalog</p>`
+        : compatible.map(dv => `
+          <button class="device-option" data-version-id="${dv.id}">
+            <span class="device-option-label">${dv.label}</span>
+          </button>
+        `).join('')
+      }
+    </div>
+  `;
+
+  const searchInput = list.querySelector('#deviceSearch');
+  const deviceListContainer = list.querySelector('#deviceListContainer');
+
+  // Filter devices as user types
+  searchInput.addEventListener('input', () => {
+    const searchTerm = searchInput.value.toLowerCase().trim();
+    
+    if (searchTerm === '') {
+      // Show all devices when search is empty
+      deviceListContainer.innerHTML = compatible.map(dv => `
         <button class="device-option" data-version-id="${dv.id}">
           <span class="device-option-label">${dv.label}</span>
           <span class="device-option-type">${dv.device_type}</span>
         </button>
       `).join('');
+    } else {
+      // Filter devices based on search term (partial match on label and device_type)
+      const filteredDevices = compatible.filter(dv => 
+        dv.label.toLowerCase().includes(searchTerm) || 
+        dv.device_type.toLowerCase().includes(searchTerm)
+      );
+      
+      deviceListContainer.innerHTML = filteredDevices.length === 0
+        ? `<p class="picker-empty">No devices found</p>`
+        : filteredDevices.map(dv => `
+          <button class="device-option" data-version-id="${dv.id}">
+            <span class="device-option-label">${dv.label}</span>
+            <span class="device-option-type">${dv.device_type}</span>
+          </button>
+        `).join('');
+    }
 
-  list.querySelectorAll('.device-option').forEach(btn => {
-    btn.addEventListener('click', () => {
-      session.addDevice(btn.dataset.versionId, maxDevices);
-      overlay.classList.add('hidden');
+    // Reattach event listeners to the new buttons
+    deviceListContainer.querySelectorAll('.device-option').forEach(btn => {
+      btn.addEventListener('click', () => {
+        session.addDevice(btn.dataset.versionId, maxDevices);
+        overlay.classList.add('hidden');
+      });
     });
   });
 
+  // Initial population of device list (in case search is empty on open)
+  if (compatible.length > 0) {
+    deviceListContainer.querySelectorAll('.device-option').forEach(btn => {
+      btn.addEventListener('click', () => {
+        session.addDevice(btn.dataset.versionId, maxDevices);
+        overlay.classList.add('hidden');
+      });
+    });
+  }
+
   overlay.classList.remove('hidden');
+  
+  // Focus the search input when modal opens
+  searchInput.focus();
 }
 
 // ── Breadcrumb helpers ──────────────────────────────────────────────────────

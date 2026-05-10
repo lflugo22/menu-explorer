@@ -445,6 +445,8 @@
       background: var(--bg-raised);
       text-align: left;
       transition: border-color .12s, background .12s;
+      width: 96%;
+      margin-bottom: 2%;
     }
     .device-option:hover {
       border-color: var(--accent);
@@ -459,11 +461,37 @@
       text-transform: uppercase; letter-spacing: .06em;
     }
 
-    /* ── Scrollbar ───────────────────────────────────────────────────────── */
+     /* ── Scrollbar ───────────────────────────────────────────────────────── */
     ::-webkit-scrollbar { width: 5px; }
     ::-webkit-scrollbar-track { background: transparent; }
     ::-webkit-scrollbar-thumb { background: var(--border-hi); border-radius: 3px; }
     ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+    /* ── Device picker search ─────────────────────────────────────────────── */
+    .device-search-input {
+      display: block;
+      width: 100%;
+      padding: 10px 12px;
+      margin-bottom: 12px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--bg-raised);
+      color: var(--text-primary);
+      font-family: var(--font-ui);
+      font-size: 13px;
+    }
+    .device-search-input:focus {
+      outline: none;
+      border-color: var(--accent);
+      background: var(--bg-active);
+    }
+    .device-search-input::placeholder {
+      color: var(--text-muted);
+    }
+    .device-list-container {
+      flex: 1;
+      overflow-y: auto;
+    }
   </style>
 </head>
 <body>
