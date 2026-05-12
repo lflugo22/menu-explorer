@@ -209,6 +209,12 @@
       padding: 8px 16px;
       font-size: 13px; color: var(--text-secondary);
       font-style: italic;
+      cursor: pointer;
+      transition: color .12s, background .12s;
+    }
+    .slots-empty:hover {
+      color: var(--accent);
+      background: var(--accent-dim);
     }
 
     .slot-item {
@@ -346,7 +352,7 @@
       border-color: var(--border-hi);
       background: var(--bg-raised);
     }
-    .menu-item-slot-empty { cursor: default; opacity: .5; }
+    .menu-item-slot-empty { cursor: pointer; opacity: .5; }
     .menu-item-slot.menu-item-branch:hover {
       border-color: var(--accent);
       background: var(--bg-active);

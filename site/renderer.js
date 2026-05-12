@@ -136,6 +136,9 @@ function renderSlotsList(appEl, controllerVersion, state) {
 
   if (state.slots.length === 0) {
     list.innerHTML = `<p class="slots-empty">No devices connected</p>`;
+    list.querySelector('.slots-empty')?.addEventListener('click', () => {
+      showDevicePicker(appEl, controllerVersion);
+    });
     return;
   }
 
@@ -270,6 +273,14 @@ function renderMenuView(appEl, controllerVersion, state) {
       // leaf: no navigation
     });
   });
+
+  // Wire up empty slot click to open device picker
+  const emptySlotEl = menuEl.querySelector('#slotEmpty');
+  if (emptySlotEl) {
+    emptySlotEl.addEventListener('click', () => {
+      showDevicePicker(appEl, controllerVersion);
+    });
+  }
 }
 
 // ── Node renderer ───────────────────────────────────────────────────────────
@@ -301,7 +312,7 @@ function renderSlotNodes(slotNode, state) {
   const slots = session.getSlots();
   if (slots.length === 0) {
     return `
-      <li class="menu-item menu-item-slot menu-item-slot-empty">
+      <li class="menu-item menu-item-slot menu-item-slot-empty" id="slotEmpty">
         <span class="menu-icon">○</span>
         <span class="menu-item-content">
           <span class="menu-item-label">No devices connected</span>
