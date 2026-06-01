@@ -71,3 +71,6 @@ temp/
 .npm
 .eslintcache
 .node_repl_history
+
+# Kilo Code files
+.kilo/
