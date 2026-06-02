@@ -10,6 +10,9 @@ compatible_controllers:
 # Other SC controllers are not mentioned for this connection variant.
 ---
 
+# Device Menu
+> The analyzer menu is accessed through the connected SC Controller. On the SC4500, select the device tile then choose Device menu. On SC200/SC1000, go to the main menu then select SENSOR SETUP and select the analyzer.
+
 ## Settings
 > Enter identification information for the sensor and change options for data handling and storage.
 

@@ -5,9 +5,13 @@ label: "3700 Conductivity (Module)"
 compatible_controllers:
   - sc4500
   - sc200
+controller_labels:
+  sc200:
+    device_menu: "SENSOR SETUP"
 ---
 
 # Device menu
+> The analyzer menu is accessed through the connected SC Controller. On the SC4500, select the device tile then choose Device menu. On SC200/SC1000, go to the main menu then select SENSOR SETUP and select the analyzer.
 
 ## Settings
 > Enter identification information for the sensor and change options for data handling and storage.
