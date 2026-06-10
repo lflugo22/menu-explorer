@@ -34,32 +34,32 @@ compatible_controllers:
     > AN-ISE sc, AISE sc, NISE sc — parameter options differ per probe; see sub-items
     - nh4_no3: NH4 + NO3
       > 1-point matrix correction for ammonium and nitrate.
-      >AN-ISE sc only 
+      > AN-ISE sc only 
     - nh4: NH4
       > 1-point matrix correction for ammonium.
-      <!-- AN-ISE sc (footnote 1) and AISE sc (footnote 2) -->
+      > AN-ISE sc (footnote 1) and AISE sc
     - no3: NO3
       > 1-point matrix correction for nitrate.
-      <!-- AN-ISE sc (footnote 1) and NISE sc (footnote 3) -->
+      > AN-ISE sc (footnote 1) and NISE sc
     - nh4_k: NH4 + K
       > 1-point matrix correction for ammonium and potassium.
-      <!-- AN-ISE sc (footnote 1) and AISE sc (footnote 2) -->
+      > AN-ISE sc (footnote 1) and AISE sc
     - no3_cl: NO3 + CL
       > 1-point matrix correction for nitrate and chloride.
-      <!-- AN-ISE sc (footnote 1) and NISE sc (footnote 3) -->
+      > AN-ISE sc (footnote 1) and NISE sc
     - nh4_k_no3_cl: NH4+K NO3+CL
       > 1-point matrix correction for ammonium, potassium, nitrate and chloride.
-      <!-- AN-ISE sc only (footnote 1) -->
+      > AN-ISE sc only
     - take_sample: TAKE SAMPLE IMMEDIATELY AND ANALYSE IN LABORATORY
       > Information window: sample must be taken immediately and analysed in the laboratory.
   - value_corr_1: VALUE CORR. 1
     > Perform 1-point value correction; the most recently used menu is displayed.
     - vc1_nh4_n: NH4–N
       > Select ammonium as the parameter for the 1-point value correction.
-      <!-- AN-ISE sc (footnote 1) and AISE sc (footnote 2) -->
+      > AN-ISE sc and AISE sc
     - vc1_no3_n: NO3–N
       > Select nitrate as the parameter for the 1-point value correction.
-      <!-- AN-ISE sc (footnote 1) and NISE sc (footnote 3) -->
+      > AN-ISE sc and NISE sc
     - value_point: VALUE POINT
       > Enter the three values for the 1-point value correction.
       - an_ise_nh4_n: AN-ISE SC NH4–N
@@ -76,10 +76,10 @@ compatible_controllers:
     > Perform 2-point value correction for higher accuracy over a wider concentration range.
     - vc2_nh4_n: NH4–N
       > Select ammonium as the parameter for the 2-point value correction.
-      <!-- AN-ISE sc (footnote 1) and AISE sc (footnote 2) -->
+      > AN-ISE sc and AISE sc
     - vc2_no3_n: NO3–N
       > Select nitrate as the parameter for the 2-point value correction.
-      <!-- AN-ISE sc (footnote 1) and NISE sc (footnote 3) -->
+      > AN-ISE sc and NISE sc
     - value_point_1: VALUE POINT 1
       > Enter the three values for the first correction point.
       - vp1_an_ise_nh4_n: AN-ISE SC NH4–N
