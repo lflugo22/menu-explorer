@@ -1,6 +1,6 @@
 {
   "meta": {
-    "built_at": "2026-06-13T04:50:17.195Z",
+    "built_at": "2026-06-14T02:28:18.318Z",
     "schema_version": "1"
   },
   "controllers": [
@@ -49,6 +49,12 @@
       "id": "an_ise_sc",
       "versions": [
         "an_ise_sc@Latest"
+      ]
+    },
+    "as950_phd_sc": {
+      "id": "as950_phd_sc",
+      "versions": [
+        "as950_phd_sc@Any"
       ]
     },
     "cl17sc": {
@@ -221,6 +227,21 @@
       "source_file": "an_ise_sc-unknown.md",
       "root_nodes": [
         "an_ise_sc@Latest/sensor_setup"
+      ]
+    },
+    "as950_phd_sc@Any": {
+      "id": "as950_phd_sc@Any",
+      "device_type": "as950_phd_sc",
+      "version": "Any",
+      "label": "AS950 pHD",
+      "is_controller": false,
+      "max_devices": null,
+      "compatible_controllers": [
+        "as950_controller"
+      ],
+      "source_file": "as950_pH.md",
+      "root_nodes": [
+        "as950_phd_sc@Any/configure_sensors"
       ]
     },
     "cl17sc@Latest": {
@@ -10581,6 +10602,389 @@
       "parent_id": "an_ise_sc@Latest/sensor_setup.diag_test.service",
       "children": [],
       "sort_order": 2,
+      "controller_labels": {}
+    },
+    "as950_phd_sc@Any/configure_sensors": {
+      "id": "as950_phd_sc@Any/configure_sensors",
+      "version_id": "as950_phd_sc@Any",
+      "path": "configure_sensors",
+      "key": "configure_sensors",
+      "label": "Configure Sensors",
+      "description": null,
+      "type": "branch",
+      "depth": 0,
+      "parent_id": null,
+      "children": [
+        "as950_phd_sc@Any/configure_sensors.setup_wizard",
+        "as950_phd_sc@Any/configure_sensors.calibration",
+        "as950_phd_sc@Any/configure_sensors.basic_settings",
+        "as950_phd_sc@Any/configure_sensors.advanced_settings",
+        "as950_phd_sc@Any/configure_sensors.restore_defaults"
+      ],
+      "sort_order": 0,
+      "controller_labels": {}
+    },
+    "as950_phd_sc@Any/configure_sensors.setup_wizard": {
+      "id": "as950_phd_sc@Any/configure_sensors.setup_wizard",
+      "version_id": "as950_phd_sc@Any",
+      "path": "configure_sensors.setup_wizard",
+      "key": "setup_wizard",
+      "label": "Setup Wizard",
+      "description": "Configures all the sensor settings. Calibrates the sensor. Obey the screen prompts to complete the procedures.",
+      "type": "leaf",
+      "depth": 1,
+      "parent_id": "as950_phd_sc@Any/configure_sensors",
+      "children": [],
+      "sort_order": 0,
+      "controller_labels": {}
+    },
+    "as950_phd_sc@Any/configure_sensors.calibration": {
+      "id": "as950_phd_sc@Any/configure_sensors.calibration",
+      "version_id": "as950_phd_sc@Any",
+      "path": "configure_sensors.calibration",
+      "key": "calibration",
+      "label": "Calibration",
+      "description": null,
+      "type": "branch",
+      "depth": 1,
+      "parent_id": "as950_phd_sc@Any/configure_sensors",
+      "children": [
+        "as950_phd_sc@Any/configure_sensors.calibration.ph_calibration",
+        "as950_phd_sc@Any/configure_sensors.calibration.temperature_calibration",
+        "as950_phd_sc@Any/configure_sensors.calibration.exit_calibration",
+        "as950_phd_sc@Any/configure_sensors.calibration.factory_calibration"
+      ],
+      "sort_order": 1,
+      "controller_labels": {}
+    },
+    "as950_phd_sc@Any/configure_sensors.calibration.ph_calibration": {
+      "id": "as950_phd_sc@Any/configure_sensors.calibration.ph_calibration",
+      "version_id": "as950_phd_sc@Any",
+      "path": "configure_sensors.calibration.ph_calibration",
+      "key": "ph_calibration",
+      "label": "pH Calibration",
+      "description": null,
+      "type": "branch",
+      "depth": 2,
+      "parent_id": "as950_phd_sc@Any/configure_sensors.calibration",
+      "children": [
+        "as950_phd_sc@Any/configure_sensors.calibration.ph_calibration.1pt_auto",
+        "as950_phd_sc@Any/configure_sensors.calibration.ph_calibration.2pt_auto",
+        "as950_phd_sc@Any/configure_sensors.calibration.ph_calibration.1pt_manual",
+        "as950_phd_sc@Any/configure_sensors.calibration.ph_calibration.2pt_manual"
+      ],
+      "sort_order": 0,
+      "controller_labels": {}
+    },
+    "as950_phd_sc@Any/configure_sensors.calibration.ph_calibration.1pt_auto": {
+      "id": "as950_phd_sc@Any/configure_sensors.calibration.ph_calibration.1pt_auto",
+      "version_id": "as950_phd_sc@Any",
+      "path": "configure_sensors.calibration.ph_calibration.1pt_auto",
+      "key": "1pt_auto",
+      "label": "1-point auto correction",
+      "description": "Uses one buffer (e.g., pH 7); the sensor automatically identifies the buffer during calibration.",
+      "type": "leaf",
+      "depth": 3,
+      "parent_id": "as950_phd_sc@Any/configure_sensors.calibration.ph_calibration",
+      "children": [],
+      "sort_order": 0,
+      "controller_labels": {}
+    },
+    "as950_phd_sc@Any/configure_sensors.calibration.ph_calibration.2pt_auto": {
+      "id": "as950_phd_sc@Any/configure_sensors.calibration.ph_calibration.2pt_auto",
+      "version_id": "as950_phd_sc@Any",
+      "path": "configure_sensors.calibration.ph_calibration.2pt_auto",
+      "key": "2pt_auto",
+      "label": "2-point auto correction",
+      "description": "Uses two buffers (e.g., pH 7 and pH 4); the sensor automatically identifies the buffers during calibration (recommended).",
+      "type": "leaf",
+      "depth": 3,
+      "parent_id": "as950_phd_sc@Any/configure_sensors.calibration.ph_calibration",
+      "children": [],
+      "sort_order": 1,
+      "controller_labels": {}
+    },
+    "as950_phd_sc@Any/configure_sensors.calibration.ph_calibration.1pt_manual": {
+      "id": "as950_phd_sc@Any/configure_sensors.calibration.ph_calibration.1pt_manual",
+      "version_id": "as950_phd_sc@Any",
+      "path": "configure_sensors.calibration.ph_calibration.1pt_manual",
+      "key": "1pt_manual",
+      "label": "1-point manual correction",
+      "description": "Uses a sample of known pH value or one buffer; the user enters the pH value during calibration.",
+      "type": "leaf",
+      "depth": 3,
+      "parent_id": "as950_phd_sc@Any/configure_sensors.calibration.ph_calibration",
+      "children": [],
+      "sort_order": 2,
+      "controller_labels": {}
+    },
+    "as950_phd_sc@Any/configure_sensors.calibration.ph_calibration.2pt_manual": {
+      "id": "as950_phd_sc@Any/configure_sensors.calibration.ph_calibration.2pt_manual",
+      "version_id": "as950_phd_sc@Any",
+      "path": "configure_sensors.calibration.ph_calibration.2pt_manual",
+      "key": "2pt_manual",
+      "label": "2-point manual correction",
+      "description": "Uses two samples of known pH value or two buffers; the user enters the pH values during calibration.",
+      "type": "leaf",
+      "depth": 3,
+      "parent_id": "as950_phd_sc@Any/configure_sensors.calibration.ph_calibration",
+      "children": [],
+      "sort_order": 3,
+      "controller_labels": {}
+    },
+    "as950_phd_sc@Any/configure_sensors.calibration.temperature_calibration": {
+      "id": "as950_phd_sc@Any/configure_sensors.calibration.temperature_calibration",
+      "version_id": "as950_phd_sc@Any",
+      "path": "configure_sensors.calibration.temperature_calibration",
+      "key": "temperature_calibration",
+      "label": "Temperature Calibration",
+      "description": null,
+      "type": "branch",
+      "depth": 2,
+      "parent_id": "as950_phd_sc@Any/configure_sensors.calibration",
+      "children": [
+        "as950_phd_sc@Any/configure_sensors.calibration.temperature_calibration.temp_adjust"
+      ],
+      "sort_order": 1,
+      "controller_labels": {}
+    },
+    "as950_phd_sc@Any/configure_sensors.calibration.temperature_calibration.temp_adjust": {
+      "id": "as950_phd_sc@Any/configure_sensors.calibration.temperature_calibration.temp_adjust",
+      "version_id": "as950_phd_sc@Any",
+      "path": "configure_sensors.calibration.temperature_calibration.temp_adjust",
+      "key": "temp_adjust",
+      "label": "Temperature adjustment",
+      "description": "Calibrates the temperature reading against an accurate external thermometer by entering the exact measured temperature value.",
+      "type": "leaf",
+      "depth": 3,
+      "parent_id": "as950_phd_sc@Any/configure_sensors.calibration.temperature_calibration",
+      "children": [],
+      "sort_order": 0,
+      "controller_labels": {}
+    },
+    "as950_phd_sc@Any/configure_sensors.calibration.exit_calibration": {
+      "id": "as950_phd_sc@Any/configure_sensors.calibration.exit_calibration",
+      "version_id": "as950_phd_sc@Any",
+      "path": "configure_sensors.calibration.exit_calibration",
+      "key": "exit_calibration",
+      "label": "Exit Calibration",
+      "description": null,
+      "type": "branch",
+      "depth": 2,
+      "parent_id": "as950_phd_sc@Any/configure_sensors.calibration",
+      "children": [
+        "as950_phd_sc@Any/configure_sensors.calibration.exit_calibration.abort",
+        "as950_phd_sc@Any/configure_sensors.calibration.exit_calibration.back_to_cal",
+        "as950_phd_sc@Any/configure_sensors.calibration.exit_calibration.leave"
+      ],
+      "sort_order": 2,
+      "controller_labels": {}
+    },
+    "as950_phd_sc@Any/configure_sensors.calibration.exit_calibration.abort": {
+      "id": "as950_phd_sc@Any/configure_sensors.calibration.exit_calibration.abort",
+      "version_id": "as950_phd_sc@Any",
+      "path": "configure_sensors.calibration.exit_calibration.abort",
+      "key": "abort",
+      "label": "Cancel",
+      "description": "Stops the calibration; a new calibration must start from the beginning.",
+      "type": "leaf",
+      "depth": 3,
+      "parent_id": "as950_phd_sc@Any/configure_sensors.calibration.exit_calibration",
+      "children": [],
+      "sort_order": 0,
+      "controller_labels": {}
+    },
+    "as950_phd_sc@Any/configure_sensors.calibration.exit_calibration.back_to_cal": {
+      "id": "as950_phd_sc@Any/configure_sensors.calibration.exit_calibration.back_to_cal",
+      "version_id": "as950_phd_sc@Any",
+      "path": "configure_sensors.calibration.exit_calibration.back_to_cal",
+      "key": "back_to_cal",
+      "label": "Return to calibration",
+      "description": "Returns to the in-progress calibration.",
+      "type": "leaf",
+      "depth": 3,
+      "parent_id": "as950_phd_sc@Any/configure_sensors.calibration.exit_calibration",
+      "children": [],
+      "sort_order": 1,
+      "controller_labels": {}
+    },
+    "as950_phd_sc@Any/configure_sensors.calibration.exit_calibration.leave": {
+      "id": "as950_phd_sc@Any/configure_sensors.calibration.exit_calibration.leave",
+      "version_id": "as950_phd_sc@Any",
+      "path": "configure_sensors.calibration.exit_calibration.leave",
+      "key": "leave",
+      "label": "Exit",
+      "description": "Exits the calibration temporarily; access to other menus is allowed and a calibration for a second sensor (if present) can be started.",
+      "type": "leaf",
+      "depth": 3,
+      "parent_id": "as950_phd_sc@Any/configure_sensors.calibration.exit_calibration",
+      "children": [],
+      "sort_order": 2,
+      "controller_labels": {}
+    },
+    "as950_phd_sc@Any/configure_sensors.calibration.factory_calibration": {
+      "id": "as950_phd_sc@Any/configure_sensors.calibration.factory_calibration",
+      "version_id": "as950_phd_sc@Any",
+      "path": "configure_sensors.calibration.factory_calibration",
+      "key": "factory_calibration",
+      "label": "Factory Calibration",
+      "description": null,
+      "type": "branch",
+      "depth": 2,
+      "parent_id": "as950_phd_sc@Any/configure_sensors.calibration",
+      "children": [
+        "as950_phd_sc@Any/configure_sensors.calibration.factory_calibration.reset_cal"
+      ],
+      "sort_order": 3,
+      "controller_labels": {}
+    },
+    "as950_phd_sc@Any/configure_sensors.calibration.factory_calibration.reset_cal": {
+      "id": "as950_phd_sc@Any/configure_sensors.calibration.factory_calibration.reset_cal",
+      "version_id": "as950_phd_sc@Any",
+      "path": "configure_sensors.calibration.factory_calibration.reset_cal",
+      "key": "reset_cal",
+      "label": "Reset setup",
+      "description": "Sets the sensor back to the factory calibration values.",
+      "type": "leaf",
+      "depth": 3,
+      "parent_id": "as950_phd_sc@Any/configure_sensors.calibration.factory_calibration",
+      "children": [],
+      "sort_order": 0,
+      "controller_labels": {}
+    },
+    "as950_phd_sc@Any/configure_sensors.basic_settings": {
+      "id": "as950_phd_sc@Any/configure_sensors.basic_settings",
+      "version_id": "as950_phd_sc@Any",
+      "path": "configure_sensors.basic_settings",
+      "key": "basic_settings",
+      "label": "Basic Settings",
+      "description": null,
+      "type": "branch",
+      "depth": 1,
+      "parent_id": "as950_phd_sc@Any/configure_sensors",
+      "children": [
+        "as950_phd_sc@Any/configure_sensors.basic_settings.ac_freq",
+        "as950_phd_sc@Any/configure_sensors.basic_settings.allways_on"
+      ],
+      "sort_order": 2,
+      "controller_labels": {}
+    },
+    "as950_phd_sc@Any/configure_sensors.basic_settings.ac_freq": {
+      "id": "as950_phd_sc@Any/configure_sensors.basic_settings.ac_freq",
+      "version_id": "as950_phd_sc@Any",
+      "path": "configure_sensors.basic_settings.ac_freq",
+      "key": "ac_freq",
+      "label": "AC Frequency",
+      "description": "Selects the power line frequency to get the best noise rejection.",
+      "type": "branch",
+      "depth": 2,
+      "parent_id": "as950_phd_sc@Any/configure_sensors.basic_settings",
+      "children": [
+        "as950_phd_sc@Any/configure_sensors.basic_settings.ac_freq.ac_freq_50",
+        "as950_phd_sc@Any/configure_sensors.basic_settings.ac_freq.ac_freq_60"
+      ],
+      "sort_order": 0,
+      "controller_labels": {}
+    },
+    "as950_phd_sc@Any/configure_sensors.basic_settings.ac_freq.ac_freq_50": {
+      "id": "as950_phd_sc@Any/configure_sensors.basic_settings.ac_freq.ac_freq_50",
+      "version_id": "as950_phd_sc@Any",
+      "path": "configure_sensors.basic_settings.ac_freq.ac_freq_50",
+      "key": "ac_freq_50",
+      "label": "50 Hz",
+      "description": null,
+      "type": "leaf",
+      "depth": 3,
+      "parent_id": "as950_phd_sc@Any/configure_sensors.basic_settings.ac_freq",
+      "children": [],
+      "sort_order": 0,
+      "controller_labels": {}
+    },
+    "as950_phd_sc@Any/configure_sensors.basic_settings.ac_freq.ac_freq_60": {
+      "id": "as950_phd_sc@Any/configure_sensors.basic_settings.ac_freq.ac_freq_60",
+      "version_id": "as950_phd_sc@Any",
+      "path": "configure_sensors.basic_settings.ac_freq.ac_freq_60",
+      "key": "ac_freq_60",
+      "label": "60 Hz (default)",
+      "description": null,
+      "type": "leaf",
+      "depth": 3,
+      "parent_id": "as950_phd_sc@Any/configure_sensors.basic_settings.ac_freq",
+      "children": [],
+      "sort_order": 1,
+      "controller_labels": {}
+    },
+    "as950_phd_sc@Any/configure_sensors.basic_settings.allways_on": {
+      "id": "as950_phd_sc@Any/configure_sensors.basic_settings.allways_on",
+      "version_id": "as950_phd_sc@Any",
+      "path": "configure_sensors.basic_settings.allways_on",
+      "key": "allways_on",
+      "label": "Always On",
+      "description": "Sets the sensor to operate continuously or to only operate during the data logging interval for the sensor. Select Disable to increase the battery life",
+      "type": "branch",
+      "depth": 2,
+      "parent_id": "as950_phd_sc@Any/configure_sensors.basic_settings",
+      "children": [
+        "as950_phd_sc@Any/configure_sensors.basic_settings.allways_on.allways_on_enabled",
+        "as950_phd_sc@Any/configure_sensors.basic_settings.allways_on.allways_on_disabled"
+      ],
+      "sort_order": 1,
+      "controller_labels": {}
+    },
+    "as950_phd_sc@Any/configure_sensors.basic_settings.allways_on.allways_on_enabled": {
+      "id": "as950_phd_sc@Any/configure_sensors.basic_settings.allways_on.allways_on_enabled",
+      "version_id": "as950_phd_sc@Any",
+      "path": "configure_sensors.basic_settings.allways_on.allways_on_enabled",
+      "key": "allways_on_enabled",
+      "label": "Enabled (default)",
+      "description": null,
+      "type": "leaf",
+      "depth": 3,
+      "parent_id": "as950_phd_sc@Any/configure_sensors.basic_settings.allways_on",
+      "children": [],
+      "sort_order": 0,
+      "controller_labels": {}
+    },
+    "as950_phd_sc@Any/configure_sensors.basic_settings.allways_on.allways_on_disabled": {
+      "id": "as950_phd_sc@Any/configure_sensors.basic_settings.allways_on.allways_on_disabled",
+      "version_id": "as950_phd_sc@Any",
+      "path": "configure_sensors.basic_settings.allways_on.allways_on_disabled",
+      "key": "allways_on_disabled",
+      "label": "Disabled",
+      "description": null,
+      "type": "leaf",
+      "depth": 3,
+      "parent_id": "as950_phd_sc@Any/configure_sensors.basic_settings.allways_on",
+      "children": [],
+      "sort_order": 1,
+      "controller_labels": {}
+    },
+    "as950_phd_sc@Any/configure_sensors.advanced_settings": {
+      "id": "as950_phd_sc@Any/configure_sensors.advanced_settings",
+      "version_id": "as950_phd_sc@Any",
+      "path": "configure_sensors.advanced_settings",
+      "key": "advanced_settings",
+      "label": "Advanced Settings",
+      "description": "Configures the optional, advanced sensor settings.",
+      "type": "leaf",
+      "depth": 1,
+      "parent_id": "as950_phd_sc@Any/configure_sensors",
+      "children": [],
+      "sort_order": 3,
+      "controller_labels": {}
+    },
+    "as950_phd_sc@Any/configure_sensors.restore_defaults": {
+      "id": "as950_phd_sc@Any/configure_sensors.restore_defaults",
+      "version_id": "as950_phd_sc@Any",
+      "path": "configure_sensors.restore_defaults",
+      "key": "restore_defaults",
+      "label": "Restore Defaults",
+      "description": "Sets the sensor settings and the sensor calibration back to the factory defaults.",
+      "type": "leaf",
+      "depth": 1,
+      "parent_id": "as950_phd_sc@Any/configure_sensors",
+      "children": [],
+      "sort_order": 4,
       "controller_labels": {}
     },
     "cl17sc@Latest/device_menu": {
