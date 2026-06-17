@@ -1,6 +1,6 @@
 {
   "meta": {
-    "built_at": "2026-06-14T02:28:18.318Z",
+    "built_at": "2026-06-17T00:22:49.359Z",
     "schema_version": "1"
   },
   "controllers": [
@@ -3511,10 +3511,56 @@
       "path": "test_maint.hold_outputs",
       "key": "hold_outputs",
       "label": "Hold Outputs",
-      "description": null,
-      "type": "leaf",
+      "description": "Sets the value the controller sends to an external system for a defined period of time. After the time period, the instrument goes back to reporting real time values.",
+      "type": "branch",
       "depth": 1,
       "parent_id": "sc200@2.06/test_maint",
+      "children": [
+        "sc200@2.06/test_maint.hold_outputs.set_activation",
+        "sc200@2.06/test_maint.hold_outputs.set_outmode",
+        "sc200@2.06/test_maint.hold_outputs.set_channels"
+      ],
+      "sort_order": 2,
+      "controller_labels": {}
+    },
+    "sc200@2.06/test_maint.hold_outputs.set_activation": {
+      "id": "sc200@2.06/test_maint.hold_outputs.set_activation",
+      "version_id": "sc200@2.06",
+      "path": "test_maint.hold_outputs.set_activation",
+      "key": "set_activation",
+      "label": "Set activation",
+      "description": "Launches or Releases the hold",
+      "type": "leaf",
+      "depth": 2,
+      "parent_id": "sc200@2.06/test_maint.hold_outputs",
+      "children": [],
+      "sort_order": 0,
+      "controller_labels": {}
+    },
+    "sc200@2.06/test_maint.hold_outputs.set_outmode": {
+      "id": "sc200@2.06/test_maint.hold_outputs.set_outmode",
+      "version_id": "sc200@2.06",
+      "path": "test_maint.hold_outputs.set_outmode",
+      "key": "set_outmode",
+      "label": "Set Outmode",
+      "description": "Hold Outputs (default) or Transfer Outputs",
+      "type": "leaf",
+      "depth": 2,
+      "parent_id": "sc200@2.06/test_maint.hold_outputs",
+      "children": [],
+      "sort_order": 1,
+      "controller_labels": {}
+    },
+    "sc200@2.06/test_maint.hold_outputs.set_channels": {
+      "id": "sc200@2.06/test_maint.hold_outputs.set_channels",
+      "version_id": "sc200@2.06",
+      "path": "test_maint.hold_outputs.set_channels",
+      "key": "set_channels",
+      "label": "Set Channels",
+      "description": "All (default) or select from an output list",
+      "type": "leaf",
+      "depth": 2,
+      "parent_id": "sc200@2.06/test_maint.hold_outputs",
       "children": [],
       "sort_order": 2,
       "controller_labels": {}
