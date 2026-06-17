@@ -1,6 +1,6 @@
 {
   "meta": {
-    "built_at": "2026-06-17T00:57:46.775Z",
+    "built_at": "2026-06-17T01:03:09.266Z",
     "schema_version": "1"
   },
   "controllers": [
@@ -366,7 +366,6 @@
       ],
       "source_file": "sonatax-v1.16.md",
       "root_nodes": [
-        "sonatax_sc@1.16/sensor_status",
         "sonatax_sc@1.16/sensor_setup"
       ]
     },
@@ -14394,51 +14393,6 @@
       "sort_order": 0,
       "controller_labels": {}
     },
-    "sonatax_sc@1.16/sensor_status": {
-      "id": "sonatax_sc@1.16/sensor_status",
-      "version_id": "sonatax_sc@1.16",
-      "path": "sensor_status",
-      "key": "sensor_status",
-      "label": "Sensor Status",
-      "description": null,
-      "type": "branch",
-      "depth": 0,
-      "parent_id": null,
-      "children": [
-        "sonatax_sc@1.16/sensor_status.errors",
-        "sonatax_sc@1.16/sensor_status.warnings"
-      ],
-      "sort_order": 0,
-      "controller_labels": {}
-    },
-    "sonatax_sc@1.16/sensor_status.errors": {
-      "id": "sonatax_sc@1.16/sensor_status.errors",
-      "version_id": "sonatax_sc@1.16",
-      "path": "sensor_status.errors",
-      "key": "errors",
-      "label": "Errors",
-      "description": "Lists current error messages.",
-      "type": "leaf",
-      "depth": 1,
-      "parent_id": "sonatax_sc@1.16/sensor_status",
-      "children": [],
-      "sort_order": 0,
-      "controller_labels": {}
-    },
-    "sonatax_sc@1.16/sensor_status.warnings": {
-      "id": "sonatax_sc@1.16/sensor_status.warnings",
-      "version_id": "sonatax_sc@1.16",
-      "path": "sensor_status.warnings",
-      "key": "warnings",
-      "label": "Warnings",
-      "description": "Lists current warning messages.",
-      "type": "leaf",
-      "depth": 1,
-      "parent_id": "sonatax_sc@1.16/sensor_status",
-      "children": [],
-      "sort_order": 1,
-      "controller_labels": {}
-    },
     "sonatax_sc@1.16/sensor_setup": {
       "id": "sonatax_sc@1.16/sensor_setup",
       "version_id": "sonatax_sc@1.16",
@@ -14455,7 +14409,7 @@
         "sonatax_sc@1.16/sensor_setup.configure",
         "sonatax_sc@1.16/sensor_setup.test_maint"
       ],
-      "sort_order": 1,
+      "sort_order": 0,
       "controller_labels": {}
     },
     "sonatax_sc@1.16/sensor_setup.wipe": {

@@ -9,13 +9,6 @@ compatible_controllers:
   - sc1000
 ---
 
-## Sensor Status
-
-- errors: Errors
-  > Lists current error messages.
-- warnings: Warnings
-  > Lists current warning messages.
-
 ## Sensor Setup
 
 ### Wipe
