@@ -162,7 +162,7 @@ and flag it with a comment in the file using HTML comment syntax:
 <!-- REVIEW: uncertain whether "Slope adjustment" belongs under pH or Calibration -->
 ```
 
-If you cannot determine the firmware version, use `"unknown"` and flag it.
+If you cannot determine the firmware version, use `"latest"` and flag it.
 
 If a section of the manual is clearly not part of the menu structure
 (safety warnings, installation instructions, specifications), skip it.
