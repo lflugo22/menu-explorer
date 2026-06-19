@@ -301,7 +301,6 @@ function renderNode(node, state, ctrlDeviceType) {
       <span class="menu-item-content">
         <span class="menu-item-label">${label}</span>
         ${node.description ? `<span class="menu-item-desc">${node.description}</span>` : ''}
-        ${isLeaf ? `<span class="menu-item-path">${node.path}</span>` : ''}
       </span>
       ${!isLeaf ? `<span class="menu-chevron">›</span>` : ''}
     </li>

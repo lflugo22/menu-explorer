@@ -8,15 +8,17 @@ compatible_controllers:
   - sc4500
 controller_labels:
   sc4500:
-    sensor_setup: "Device menu"
+    menu: "Device menu"
+  sc200:
+    menu: "Sensor Setup"
 ---
 
-## Sensor setup
+# Menu
 
-- wipe: Wipe
-  > Triggers a wiping operation.
+## Wipe
+> Triggers a wiping operation.
 
-### Calibrate (turbidity)
+## Calibrate (turbidity)
 
 <!-- REVIEW: The manual lists two separate top-level "CALIBRATE" menus under SENSOR setup — one for the turbidity (TRB) parameter and one for the solid (TS) parameter — both using the identical label "CALIBRATE". Disambiguated as calibrate_trb / calibrate_ts per the key-uniqueness requirement. -->
 
@@ -50,7 +52,7 @@ controller_labels:
 
 <!-- REVIEW: The manual lists "MEMORY" containing POINT 1/2/3 (recording action) followed immediately by POINT 1/2/3 again (current calibration value display) under the same MEMORY node, using identical labels for both purposes. Keys disambiguated as point_N (recording) and point_N_current (current value display) since both pairs share the same parent path in the source. -->
 
-### Calibrate (TS content)
+## Calibrate (TS content)
 
 - set_outmode: Set Outmode
   > Behavior of the outputs during calibration and zero point adjustment.
@@ -80,7 +82,7 @@ controller_labels:
   - set_cal_deflt: Set Cal Deflt
     > Security prompt, all calibration points are cleared.
 
-### Configure
+## Configure
 
 - edit_name: Edit Name
   > Name can include up to 16 characters. Default: Device number
@@ -100,7 +102,7 @@ controller_labels:
 - set_defaults: Set Defaults
   > Security prompt, reset to default configuration for all menu options listed above.
 
-### Test/maint
+## Test/maint
 
 - probe_info: Probe Info
   - sensor_name: Sensor Name
