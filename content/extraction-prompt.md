@@ -61,10 +61,9 @@ max_devices: <number>        # maximum devices this controller supports
 
 **Markdown body** rules:
 
+- H1 headings ('#') = 'Menu' 
 - H2 headings (`##`) = top-level menu sections
-- H3 headings (`###`) = sub-menus
-- H4+ headings (`####`, `#####`, `######`) = deeper sub-menus, up to H6
-- **Beyond H6 — use nested list items instead of headings:**
+- **Beyond H2 — use nested list items instead of headings:**
   A list item that has indented children beneath it becomes a BRANCH node.
   A list item with no children is a LEAF node. Nesting can go arbitrarily deep.
   ```markdown
