@@ -79,3 +79,5 @@ compatible_controllers:
     - two_point_calibration_value: Calibration value
     - offset: Offset
     - slope: Slope
+
+## Edit in Github
