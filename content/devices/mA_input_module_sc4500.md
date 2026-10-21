@@ -80,4 +80,3 @@ compatible_controllers:
     - offset: Offset
     - slope: Slope
 
-## Edit in Github
