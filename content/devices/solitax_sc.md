@@ -6,6 +6,9 @@ compatible_controllers:
   - sc200
   - sc1000
   - sc4500
+controller_labels:
+  sc4500:
+    sensor_setup: "Device menu"
 ---
 
 ## Sensor Setup
