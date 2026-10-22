@@ -10,6 +10,7 @@ compatible_controllers:
 controller_labels:
   sc4500:
     sensor_setup: "Device menu"
+    test_maint: "Diagnostics/Test"
 ---
 
 ## Sensor Setup
