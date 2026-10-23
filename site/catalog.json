@@ -1,6 +1,6 @@
 {
   "meta": {
-    "built_at": "2026-10-21T04:12:47.141Z",
+    "built_at": "2026-10-23T04:22:38.444Z",
     "schema_version": "1"
   },
   "controllers": [
@@ -18377,7 +18377,9 @@
         "solitax_sc@All/sensor_setup.test_maint"
       ],
       "sort_order": 0,
-      "controller_labels": {}
+      "controller_labels": {
+        "sc4500": "Device menu"
+      }
     },
     "solitax_sc@All/sensor_setup.configure": {
       "id": "solitax_sc@All/sensor_setup.configure",
@@ -18880,7 +18882,9 @@
         "sonatax_sc@1.16/sensor_setup.test_maint"
       ],
       "sort_order": 0,
-      "controller_labels": {}
+      "controller_labels": {
+        "sc4500": "Device menu"
+      }
     },
     "sonatax_sc@1.16/sensor_setup.wipe": {
       "id": "sonatax_sc@1.16/sensor_setup.wipe",
@@ -21838,7 +21842,9 @@
         "uvas_plus_sc@Latest/sensor_setup.diag_test"
       ],
       "sort_order": 0,
-      "controller_labels": {}
+      "controller_labels": {
+        "sc4500": "Device Menu"
+      }
     },
     "uvas_plus_sc@Latest/sensor_setup.select_sensor_setup": {
       "id": "uvas_plus_sc@Latest/sensor_setup.select_sensor_setup",
