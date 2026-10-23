@@ -29,3 +29,6 @@ jobs:
 
       - name: Build project
         run: npm run build
+
+      - name: Commit and push changes
+        uses: actions4git/add-commit-push@v1
