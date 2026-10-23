@@ -6,13 +6,12 @@ on:
     paths:
       - content/**
 
-permissions: 
-  contents: write
-
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    permissions: 
+      contents: write
+      
     # This sets the folder for all 'run' steps in this job
     defaults:
       run:
@@ -33,5 +32,3 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Commit and push changes
-        uses: actions4git/add-commit-push@v1
