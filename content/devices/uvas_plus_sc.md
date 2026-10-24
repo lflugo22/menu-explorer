@@ -7,7 +7,7 @@ compatible_controllers:
   - sc4500
 controller_labels:
   sc4500:
-    sensor_setup: "Device Menu"
+    sensor_setup: "Device menu"
     diag_test: "Diagnostics/Test"
 # REVIEW: The manual states "The sensor can be operated with all sc controllers" but does not
 # list specific controller model slugs. Replace sc_controller with the actual controller slugs
