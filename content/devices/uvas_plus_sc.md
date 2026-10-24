@@ -18,9 +18,6 @@ controller_labels:
 
 ## SENSOR SETUP
 
-- select_sensor_setup: SELECT SENSOR
-  > Shown only when more than one sensor is connected.
-
 ### CALIBRATION
 
 - factor: FACTOR
@@ -30,7 +27,7 @@ controller_labels:
 - zero_cal: ZERO CAL
   > Initiates zero point calibration using distilled water; see zero point calibration procedure.
 - one_sample_cal: 1 SAMPLE CAL
-  > Initiates 1-point calibration using a reference sample; see 1 point calibration procedure.
+  > Initiates 1-point calibration using a reference sample; see 1-point calibration procedure.
 - verify: VERIFY
   > Initiates verification using a test glass filter; see verifying procedure.
 - cal_config: CAL. CONFIG
@@ -129,7 +126,7 @@ based on those procedural references. -->
   - extd: extd
     > Dark value extinction.
   - moist: MOIST
-    > Humidity / moisture indicator.
+    > Humidity/moisture indicator.
 - output_mode_maint: OUTPUT MODE
   > Defines the behaviour of instrument outputs when the MAINT.PROC. menu is opened.
 
