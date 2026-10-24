@@ -1,34 +1,51 @@
-name: Build App
+name: Build and deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
-    paths:
-      - content/**
+    branches: [main]
+  workflow_dispatch:   # lets you run it manually from the Actions tab
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions: 
-      contents: write
-      
-    # This sets the folder for all 'run' steps in this job
-    defaults:
-      run:
-        working-directory: ./pipeline
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: '24'
+          node-version: 22
+          cache: npm
+          cache-dependency-path: pipeline/package-lock.json
 
       - name: Install dependencies
-        run: npm install
+        working-directory: pipeline
+        run: npm ci
 
-      - name: Build project
+      - name: Build catalog
+        working-directory: pipeline
         run: npm run build
 
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
