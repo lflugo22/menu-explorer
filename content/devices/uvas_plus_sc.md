@@ -8,7 +8,6 @@ compatible_controllers:
 controller_labels:
   sc4500:
     sensor_setup: "Device menu"
-    diag/test: "Diagnostics/Test"
 # REVIEW: The manual states "The sensor can be operated with all sc controllers" but does not
 # list specific controller model slugs. Replace sc_controller with the actual controller slugs
 # (e.g. sc200, sc1000, sc4200) once known.
@@ -36,10 +35,10 @@ controller_labels:
     - active: ACTIVE
     - hold: HOLD
     - transfer: TRANSFER
-  - selection: SELECTION
+    - selection: SELECTION
   - cal_interval: CAL INTERVAL
     > Counter for customer calibration interval; range 0–30 days, default 0 days.
-  - set_cal_deflt: SET CAL DEFLT
+- set_cal_deflt: SET CAL DEFLT
 
 ### CONFIGURATION
 
