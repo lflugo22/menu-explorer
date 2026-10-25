@@ -427,7 +427,7 @@ function buildSlotBreadcrumb(nodeId, slot, controllerVersion) {
   const dv = store.getVersion(slot.deviceVersionId);
   if (!dv) return [];
 
-  const slotLabel = `Device ${slot.slotIndex}`;
+  const slotLabel = `${dv.label}`;
   const nodeCrumbs = store.getBreadcrumb(nodeId, controllerVersion.device_type);
 
   return [{ id: `__slot__${slot.slotIndex}`, label: slotLabel }, ...nodeCrumbs];
