@@ -194,7 +194,7 @@ function renderMenuView(appEl, controllerVersion, state) {
   if (!currentNodeId) {
     // Top level: controller root nodes
     nodesToRender = controllerVersion.root_nodes.map(id => store.getNode(id)).filter(Boolean);
-    breadcrumbEl.innerHTML = `<span class="crumb crumb-root">${controllerVersion.label}</span>`;
+    breadcrumbEl.innerHTML = `<span class="crumb crumb-root">Main Menu</span>`;
   } else {
     const currentNode = store.getNode(currentNodeId);
     if (!currentNode) return;
@@ -210,7 +210,7 @@ function renderMenuView(appEl, controllerVersion, state) {
 
     const backCrumb = `<button class="crumb crumb-back" id="crumbBack">←</button>`;
     const ctrlCrumb = `<button class="crumb crumb-link" data-node-id="" data-slot="">
-      ${controllerVersion.label}
+      Main Menu
     </button>`;
 
     const innerCrumbs = crumbs.map((c, i) =>
