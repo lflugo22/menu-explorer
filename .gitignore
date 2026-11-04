@@ -74,3 +74,4 @@ temp/
 
 # Kilo Code files
 .kilo/
+site/catalog.json
