@@ -9,6 +9,21 @@ compatible_controllers:
 controller_labels:
   sc4500:
     menu: "Device menu"
+    menu.calibrate__turbidity: "Calibration"
+    menu.calibrate__turbidity.set_outmode: "Output mode"
+    menu.calibrate__turbidity.sensor_measure: "Sensor measurement"
+    menu.calibrate__turbidity.calibrate: "Calibration"
+    menu.calibrate__turbidity.calibrate.memory: "Save"
+    menu.calibrate__turbidity.calibrate.memory.clear_memory: "Delete"
+    menu.calibrate__turbidity.calibrate.set_cal_deflt: "Reset calibration"
+    menu.configure: "Settings"
+    menu.configure.edit_name: "Location"
+    menu.configure.meas_unit: "Unit"
+    menu.configure.parameters: "Parameter"
+    menu.configure.set_defaults: "Reset"
+    
+    <!-- TODO: Finish TEST/MAINT sections and Calibration (solids) -->
+      
   sc200:
     menu: "Sensor Setup"
 ---
@@ -31,6 +46,8 @@ controller_labels:
   > Current, uncorrected measurement value.
 - factor: Factor
   > Can be set from 0.10 to 10.00; a detailed description is provided in section 4.5 CALIBRATE.
+- offset: Offset
+  > Can be set from -100 to 100; a detailed description is provided in section 4.5 CALIBRATE.
 - calibrate: Calibrate
   - memory: Memory
     - point_1: Point 1
