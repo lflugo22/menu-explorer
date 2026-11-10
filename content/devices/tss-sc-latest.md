@@ -9,21 +9,27 @@ compatible_controllers:
 controller_labels:
   sc4500:
     menu: "Device menu"
-    menu.calibrate_turbidity: "Calibration (turbidity)"
-    menu.calibrate_turbidity.set_outmode: "Output mode"
-    menu.calibrate_turbidity.sensor_measure: "Sensor measurement"
-    menu.calibrate_turbidity.calibrate: "Calibration"
-    menu.calibrate_turbidity.calibrate.memory: "Save"
-    menu.calibrate_turbidity.calibrate.memory.clear_memory: "Delete"
-    menu.calibrate_turbidity.calibrate.set_cal_deflt: "Reset calibration"
+    menu.calibrate: "Calibration"
+    menu.calibrate.set_outmode: "Output mode"
+    menu.calibrate.sensor_measure: "Sensor measurement"
+    menu.calibrate.calibrate: "Calibration"
+    menu.calibrate.calibrate.memory: "Save"
+    menu.calibrate.calibrate.memory.clear_memory: "Delete"
+    menu.calibrate.calibrate.set_cal_deflt: "Reset calibration"
     menu.configure: "Settings"
     menu.configure.edit_name: "Location"
     menu.configure.meas_units: "Unit"
     menu.configure.parameters: "Parameter"
     menu.configure.set_defaults: "Reset"
-    
-    <!-- TODO: Finish TEST/MAINT sections and Calibration (solids) -->
-      
+    menu.test_maint: "Test/Maintenance"
+    menu.test_maint.probe_info: "Sensor information"
+    menu.test_maint.probe_info.sensor_name: "Name"
+    menu.test_maint.probe_info.edited_name: "Location"
+    menu.test_maint.probe_info.solid: "Solids"
+    menu.test_maint.probe_info.code_vers: "Software"
+    menu.test_maint.counters: "Counter"
+    menu.test_maint.service: "Test/Maintenance"
+    menu.test_maint.service.set_outmode: "Output mode"
   sc200:
     menu: "Sensor Setup"
 ---
@@ -33,7 +39,7 @@ controller_labels:
 ## Wipe
 > Triggers a wiping operation.
 
-## Calibrate (turbidity)
+## Calibrate
 
 <!-- REVIEW: The manual lists two separate top-level "CALIBRATE" menus under SENSOR setup — one for the turbidity (TRB) parameter and one for the solid (TS) parameter — both using the identical label "CALIBRATE". Disambiguated as calibrate_trb / calibrate_ts per the key-uniqueness requirement. -->
 
@@ -41,13 +47,14 @@ controller_labels:
   > Behavior of the outputs during calibration and zero point adjustment.
   - hold: Hold
   - active: Active
-  - set_transfer: Set Transfer
+  - transfer: Transfer
+  - selection: Selection
 - sensor_measure: Sensor Measure
   > Current, uncorrected measurement value.
 - factor: Factor
   > Can be set from 0.10 to 10.00; a detailed description is provided in section 4.5 CALIBRATE.
 - offset: Offset
-  > Can be set from -100 to 100; a detailed description is provided in section 4.5 CALIBRATE.
+  > Only used when calibrating turbidity. Can be set from -100 to 100; a detailed description is provided in section 4.5 CALIBRATE.
 - calibrate: Calibrate
   - memory: Memory
     - point_1: Point 1
@@ -66,38 +73,6 @@ controller_labels:
       > Current calibration for point 3.
   - set_cal_deflt: Set Cal Deflt
     > Security prompt, reset to default calibration.
-
-<!-- REVIEW: The manual lists "MEMORY" containing POINT 1/2/3 (recording action) followed immediately by POINT 1/2/3 again (current calibration value display) under the same MEMORY node, using identical labels for both purposes. Keys disambiguated as point_N (recording) and point_N_current (current value display) since both pairs share the same parent path in the source. -->
-
-## Calibrate (TS content)
-
-- set_outmode: Set Outmode
-  > Behavior of the outputs during calibration and zero point adjustment.
-  - hold: Hold
-  - active: Active
-  - set_transfer: Set Transfer
-- sensor_measure: Sensor Measure
-  > Current, uncorrected measurement value.
-- factor: Factor
-  > Can be set from 0.10 to 10.00; detailed description in section 4.5 CALIBRATE.
-- calibrate: Calibrate
-  - memory: Memory
-    - point_1: Point 1
-      > Calibration point 1 is recorded.
-    - point_2: Point 2
-      > Calibration point 2 is recorded.
-    - point_3: Point 3
-      > Calibration point 3 is recorded.
-    - clear_memory: Clear Memory
-      > Clears the recorded value for all points.
-  - point_1_current: Point 1
-      > Current calibration for point 1.
-  - point_2_current: Point 2
-      > Current calibration for point 2.
-  - point_3_current: Point 3
-      > Current calibration for point 3.
-  - set_cal_deflt: Set Cal Deflt
-    > Security prompt, all calibration points are cleared.
 
 ## Configure
 
@@ -150,8 +125,8 @@ controller_labels:
     > Operating hours counter.
   - motor: Motor
     > Wipe cycle counter.
-  - interval: Interval
-    > Default for maintenance counter.
+- interval: Interval
+  > Default for maintenance counter.
 - service: Service
   - wipe: Wipe
   - signals: Signals
