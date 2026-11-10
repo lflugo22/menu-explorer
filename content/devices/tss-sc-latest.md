@@ -143,7 +143,6 @@ controller_labels:
     > Equipment output behavior in the Service menu.
     - hold: Hold
     - active: Active
-    - set_transfer: Set Transfer
-  - service_access: Service Access
-
-<!-- REVIEW: "COUNTERS" branch in the source (page 20) lists MANUAL RESET, then TEST/MAINT, GASKET (GASK.), TOTAL, and MOTOR each described inline as one combined block of counter descriptions, followed by INTERVAL. The exact sibling nesting (whether MANUAL RESET sits alongside or above the four counters) is somewhat ambiguous in the source layout; reconstructed as flat siblings under "counters" based on the most natural reading. -->
+    - transfer: Transfer
+    - selection: Selection
+  - service_access: [Blank] Service Access
