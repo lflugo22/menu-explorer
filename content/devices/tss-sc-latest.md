@@ -9,7 +9,7 @@ compatible_controllers:
 controller_labels:
   sc4500:
     menu: "Device menu"
-    calibrate_turbidity: "Calibration (turbidity)"
+    menu.calibrate_turbidity: "Calibration (turbidity)"
     menu.calibrate_turbidity.set_outmode: "Output mode"
     menu.calibrate_turbidity.sensor_measure: "Sensor measurement"
     menu.calibrate_turbidity.calibrate: "Calibration"
@@ -18,7 +18,7 @@ controller_labels:
     menu.calibrate_turbidity.calibrate.set_cal_deflt: "Reset calibration"
     menu.configure: "Settings"
     menu.configure.edit_name: "Location"
-    menu.configure.meas_unit: "Unit"
+    menu.configure.meas_units: "Unit"
     menu.configure.parameters: "Parameter"
     menu.configure.set_defaults: "Reset"
     
