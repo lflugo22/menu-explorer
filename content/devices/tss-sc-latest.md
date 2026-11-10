@@ -9,7 +9,7 @@ compatible_controllers:
 controller_labels:
   sc4500:
     menu: "Device menu"
-    menu.calibrate__turbidity: "Calibration"
+    menu.calibrate_turbidity_: "Calibration"
     menu.calibrate__turbidity.set_outmode: "Output mode"
     menu.calibrate__turbidity.sensor_measure: "Sensor measurement"
     menu.calibrate__turbidity.calibrate: "Calibration"
